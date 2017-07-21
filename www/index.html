@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NICO</title>
+
+    <!-- Bootstrap -->
+    <link href="css/animate.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+
+</div>
+<script src="cordova.js"></script>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        if (window.sessionStorage.getItem("login") == null)
+            window.location.href = "intro.html";
+        else
+            window.location.href = "home.html";
+    });
+</script>
+</body>
+</html>
