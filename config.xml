@@ -8,7 +8,7 @@
         Leonardo Hidalgo
     </author>
     <content src="index.html" />
-    <preference name="DisallowOverscroll" value="true" />
+    <preference name="DisallowOverscroll" value="false" />
     <preference name="Fullscreen" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="android-minSdkVersion" value="14" />

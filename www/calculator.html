@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <style>
+        .home {
+            height: 100%;
+            position:relative;
+            background:   url("img/slides/blanca.jpg")no-repeat;
+            background-size: 100% 100%;
+        }
+        option{
+            font-size: 1.5em;
+            height: 5%;
+            position: absolute;
+            left: 30%;
+        }
+        option:checked {
+            font-size: 1.5em;
+            height: 5%;
+            position: absolute;
+            left: 30%;
+        }
+        select{
+            font-size: 1.5em;
+            height: 5%;
+            position: absolute;
+            left: 30%;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        input{
+            font-size: 1.5em;
+            height: 5%;
+            position: absolute;
+            left: 30%;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="home" style="display: block">
+        <select id="dosis" class="form-control" style="top: 20%;"></select>
+        <select id="concentracion" style="top: 30%;">
+            <option value="16">4 mg/250 ml</option>
+            <option value="32">8 mg/250 ml</option>
+            <option value="64">16 mg/250 ml</option>
+            <option value="128">32 mg/250 ml</option>
+        </select>
+
+        <input type="number" id="peso" placeholder="peso (KG)" style="top: 40%">
+
+
+
+        <span id="resultado" style="font-size: 7em;text-align: center;left: 30%;top: 60%;position: absolute"></span>
+                    <a href="index.html" style="width: 13.3%;height: 7%;left: 19.7%;top: 91.5%;"> </a>
+               <a href="#" style="width: 13.3%;height: 7.5%;left: 67.2%;top: 91.4%;" id="back"> </a>
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/javascript.js"></script>
+<script>
+    for(var i= 5;i<=30;i++){
+        $("#dosis").append("<option value='"+i/100+"'>"+i/100+"</option>");
+    }
+    $("#dosis")
+    function calculo() {
+        var dosis = $("#dosis").val();
+        var peso = $("#peso").val();
+        var concentracion = $("#concentracion").val();
+
+        var resultado = peso*dosis*60/concentracion;
+        $("#resultado").html(Math.round(10*resultado)/10+ " cc/hr");
+    }
+    $("#peso").keyup(function () {
+        calculo();
+    });
+
+    $("#dosis").change(function () {
+        calculo();
+    });
+
+    $("#concentracion").change(function () {
+        calculo();
+    })
+</script>
+</body>
+</html>

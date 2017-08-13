@@ -11,7 +11,7 @@
         .home {
             height: 100%;
             position:relative;
-            background:   url("img/38.jpg")no-repeat;
+            background:   url("img/slides/file-page40.jpg")no-repeat;
             background-size: 100% 100%;
         }
     </style>
@@ -19,6 +19,15 @@
 <body>
 <div class="content">
     <div class="home" style="display: block">
+        <select id="rcp" style="left: 56%;top: 41%;width:30%;height:5%;position: absolute">
+            <option value="0">Seleccione Ritmo</option>
+            <option value="100">100</option>
+            <option value="110">110</option>
+            <option value="120">120</option>
+        </select>
+        <audio id="audio">
+            <source src="audio/100.mp3" type="audio/mpeg" id="audioSource">
+        </audio>
         <a href="index.html" style="width: 13.3%;height: 7%;left: 19.7%;top: 91.5%;"> </a>
         <a href="#" style="width: 13.3%;height: 7.5%;left: 67.2%;top: 91.4%;" id="back"> </a>
     </div>
@@ -27,6 +36,20 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery.session.js"></script>
 <script src="js/javascript.js"></script>
+<script>
+    $("#rcp").change(function () {
+       var bpm = $(this).val();
+        var audio = document.getElementById('audio');
+        var source = $("#audioSource");
+        if(bpm != 0) {
+            source.attr('src', 'audio/' + bpm + '.mp3');
+            audio.load();
+            audio.play();
+        }
+       else
+        audio.pause();
+    });
+</script>
 
 </body>
 </html>

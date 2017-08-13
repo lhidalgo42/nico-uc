@@ -5,14 +5,41 @@
     <title>Pag 43</title>
 
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/stylesheet.css" rel="stylesheet">
     <style>
         .home {
             height: 100%;
             position:relative;
-            background:   url("img/43.jpg")no-repeat;
+            background:   url("img/slides/file-page45.jpg")no-repeat;
             background-size: 100% 100%;
+        }
+        .tooltip {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: left;
+            text-align: start;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-break: normal;
+            word-spacing: normal;
+            word-wrap: normal;
+            white-space: normal;
+            /* ... */
+        }
+        .tooltip-inner {
+            max-width: 200px;
+            padding: 3px 8px;
+            color: #fff;
+            text-align: center;
+            background-color: #000;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -28,12 +55,21 @@
 
         <a href="index.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91.5%;"> </a>
         <a href="#" style="width: 13.3%;height: 7.5%;left: 66.2%;top: 91.4%;" id="back"> </a>
+        <button style="position:absolute;width: 4.3%;height: 3%;left: 76.7%;top: 70.5%;background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Insuficiencia Cardiaca"></button>
+        <button style="position:absolute;width: 4.3%;height: 3%;left: 74.7%;top: 81.5%;background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Insuficiencia Cardiaca"></button>
+
     </div>
 </div>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.session.js"></script>
 <script src="js/javascript.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
 
 </body>
 </html>

@@ -85,7 +85,7 @@
     <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="DisallowOverscroll" value="true" />
+    <preference name="DisallowOverscroll" value="false" />
     <preference name="Fullscreen" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="android-minSdkVersion" value="14" />
