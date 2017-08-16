@@ -15,27 +15,22 @@
             background-size: 100% 100%;
         }
         option{
-            font-size: 1.5em;
             height: 5%;
             position: absolute;
             left: 30%;
         }
         option:checked {
-            font-size: 1.5em;
             height: 5%;
             position: absolute;
             left: 30%;
         }
         select{
-            font-size: 1.5em;
+
             height: 5%;
             position: absolute;
             left: 30%;
-            padding-left: 5px;
-            padding-right: 5px;
         }
         input{
-            font-size: 1.5em;
             height: 5%;
             position: absolute;
             left: 30%;
@@ -53,11 +48,13 @@
             <option value="128">32 mg/250 ml</option>
         </select>
 
-        <input type="number" id="peso" placeholder="peso (KG)" style="top: 40%">
+            <select style="width: 16%;height: 4%;top: 40%;" id="peso">
+            <option value="0">Peso en KG</option>
+        </select>
 
 
 
-        <span id="resultado" style="font-size: 7em;text-align: center;left: 30%;top: 60%;position: absolute"></span>
+        <span id="resultado" style="font-size: 50px;text-align: center;left: 30%;top: 60%;position: absolute"></span>
                     <a href="index.html" style="width: 13.3%;height: 7%;left: 19.7%;top: 91.5%;"> </a>
                <a href="#" style="width: 13.3%;height: 7.5%;left: 67.2%;top: 91.4%;" id="back"> </a>
     </div>
@@ -66,6 +63,8 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/javascript.js"></script>
 <script>
+    for(var i= 30;i<201;i++)
+        $("#peso").append("<option value='"+i+"'>"+i+" KG</option>");
     for(var i= 5;i<=30;i++){
         $("#dosis").append("<option value='"+i/100+"'>"+i/100+"</option>");
     }
@@ -78,7 +77,7 @@
         var resultado = peso*dosis*60/concentracion;
         $("#resultado").html(Math.round(10*resultado)/10+ " cc/hr");
     }
-    $("#peso").keyup(function () {
+    $("#peso").change(function () {
         calculo();
     });
 
