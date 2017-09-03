@@ -85,6 +85,7 @@
     <icon density="xxxhdpi" src="www/res/icon/icon.jpg" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
+    <preference name="EnableViewportScale" value="true" />
     <preference name="DisallowOverscroll" value="false" />
     <preference name="Fullscreen" value="true" />
     <preference name="Orientation" value="portrait" />
