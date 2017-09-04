@@ -11,7 +11,7 @@
         .home {
             height: 100%;
             position:relative;
-            background:   url("img/slides/file-page61.jpg")no-repeat;
+            background:   url("img/slides/file-page59.jpg")no-repeat;
             background-size: 100% 100%;
         }
         option{
@@ -28,7 +28,12 @@
 
             height: 5%;
             position: absolute;
-            left: 30%;
+            left: 60%;
+        }
+        label{
+            height: 5%;
+            position: absolute;
+            left: 10%;
         }
         input{
             height: 5%;
@@ -40,21 +45,23 @@
 <body>
 <div class="content">
     <div class="home" style="display: block">
+        <label for="dosis" style="top: 20%;">Dosis</label>
         <select id="dosis" class="form-control" style="top: 20%;"></select>
+        <label for="concentracion" style="top: 30%;">Dilución</label>
         <select id="concentracion" style="top: 30%;">
             <option value="16">4 mg/250 ml</option>
             <option value="32">8 mg/250 ml</option>
             <option value="64">16 mg/250 ml</option>
             <option value="128">32 mg/250 ml</option>
         </select>
-
-            <select style="width: 16%;height: 4%;top: 40%;" id="peso">
+        <label for="peso" style="top: 40%">Peso</label>
+        <select style="width: 16%;height: 4%;top: 40%;" id="peso">
             <option value="0">Peso en KG</option>
         </select>
 
 
 
-        <span id="resultado" style="font-size: 50px;text-align: center;left: 30%;top: 60%;position: absolute"></span>
+        <span id="resultado" style="font-size: 50px;text-align: center;left: 30%;top: 60%;position: absolute">0,00 cc/hr</span>
                     <a href="index.html" style="width: 13.3%;height: 7%;left: 19.7%;top: 91.5%;"> </a>
                <a href="#" style="width: 13.3%;height: 7.5%;left: 67.2%;top: 91.4%;" id="back"> </a>
     </div>
@@ -66,7 +73,7 @@
     for(var i= 30;i<201;i++)
         $("#peso").append("<option value='"+i+"'>"+i+" KG</option>");
     for(var i= 5;i<=30;i++){
-        $("#dosis").append("<option value='"+i/100+"'>"+i/100+"</option>");
+        $("#dosis").append("<option value='"+i/100+"'>"+i/100+" ug/kg/min</option>");
     }
     $("#dosis")
     function calculo() {

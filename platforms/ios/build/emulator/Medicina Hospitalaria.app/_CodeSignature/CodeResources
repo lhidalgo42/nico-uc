@@ -10,7 +10,7 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		MZChAVRJja9XOoCxryHjPgJC4/M=
+		CJoZfWzcXb7VlInAltMXA6chsf0=
 		</data>
 		<key>CDVCapture.bundle/Thumbs.db</key>
 		<data>
@@ -138,7 +138,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		z0AIQWNrmJnQqnihaTr6z324lWE=
+		LPcKs52pWpp7KGRm7MtXiu+Jny0=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -146,7 +146,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		YIc16vfHFvZRXKNNynto7vV3Ar8=
+		EBSAueDZZwSd+s7mU5niTwMm6L0=
 		</data>
 		<key>CDVNotification.bundle/beep.wav</key>
 		<data>
@@ -214,7 +214,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		rA4xjkGQc+el18Qb8e7CsVkGGpk=
+		D7k2FCAxUfBKdcNC8BbfpNoYz3M=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -222,7 +222,7 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		c/6/af8fWC6aWuAdxtk8NoteHb8=
+		K7osnk7aoh8O367JpOC+XCFj4yE=
 		</data>
 		<key>www/03.html</key>
 		<data>
@@ -454,7 +454,7 @@
 		</data>
 		<key>www/calculator.html</key>
 		<data>
-		rW6MS0qf41LSoBQ80kIYe7UhCWk=
+		/MMXyVO4KquDsQKZAJIznJCGc/Q=
 		</data>
 		<key>www/cordova-js-src/exec.js</key>
 		<data>
@@ -518,7 +518,7 @@
 		</data>
 		<key>www/css/stylesheet.css</key>
 		<data>
-		BtOYy9yChDkNVIq3gSvWPJr6LLI=
+		zkAy2qPkowtc7YGEVahlGXovhKQ=
 		</data>
 		<key>www/fonts/FontAwesome.otf</key>
 		<data>
@@ -838,7 +838,7 @@
 		</data>
 		<key>www/js/javascript.js</key>
 		<data>
-		HjTrj5VDgFg40rQVW2C0rXv76N0=
+		hOzHeOhFNYYaBO5ZwzqGLLNnJ18=
 		</data>
 		<key>www/js/jquery.min.js</key>
 		<data>
@@ -1234,11 +1234,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MZChAVRJja9XOoCxryHjPgJC4/M=
+			CJoZfWzcXb7VlInAltMXA6chsf0=
 			</data>
 			<key>hash2</key>
 			<data>
-			TKt4eSTNYFa6xtRkGzPP2WORuBwaM/vgH8FHygeT+po=
+			u4QretcxAC3M5hCW9A6comKFyYcARnSinnn6MaRAb8w=
 			</data>
 		</dict>
 		<key>CDVCapture.bundle/Thumbs.db</key>
@@ -1539,11 +1539,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z0AIQWNrmJnQqnihaTr6z324lWE=
+			LPcKs52pWpp7KGRm7MtXiu+Jny0=
 			</data>
 			<key>hash2</key>
 			<data>
-			GB4kxfLrlUyjEJiEHnJJho+hmL3OcYa6yKDMTLY2iqw=
+			JVa5vyRzOt+qYhc9OPFHqJ5Nd7ia+2ZGAO4QstvvGPg=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1561,11 +1561,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YIc16vfHFvZRXKNNynto7vV3Ar8=
+			EBSAueDZZwSd+s7mU5niTwMm6L0=
 			</data>
 			<key>hash2</key>
 			<data>
-			n7cGSDwKylEl2+zF3tf85OGrtIxC8lzm9Zm0pPhqJfk=
+			e36ePh6g7hDBtkMNlaYyHmx/+HWc8DuGbExdsGt9JPI=
 			</data>
 		</dict>
 		<key>CDVNotification.bundle/beep.wav</key>
@@ -1737,22 +1737,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rA4xjkGQc+el18Qb8e7CsVkGGpk=
+			D7k2FCAxUfBKdcNC8BbfpNoYz3M=
 			</data>
 			<key>hash2</key>
 			<data>
-			oyEeUY3AJI+EOKSZPFfIiH9H1ilebUoq45jS4PbCnSc=
+			y6IBVhlXwfTfpkXKYdJUrpKfGO9ja52tZe00EuRPx1c=
 			</data>
 		</dict>
 		<key>config.xml</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			c/6/af8fWC6aWuAdxtk8NoteHb8=
+			K7osnk7aoh8O367JpOC+XCFj4yE=
 			</data>
 			<key>hash2</key>
 			<data>
-			lyzqQz7Xppl0fizBhZq4nHzDB3eTSfl2OkA5LsRjsK8=
+			eUBrcA5CVPQLCqrpY0XrsmvqIYo8ViE4s5o6nWsz56k=
 			</data>
 		</dict>
 		<key>www/03.html</key>
@@ -2386,11 +2386,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rW6MS0qf41LSoBQ80kIYe7UhCWk=
+			/MMXyVO4KquDsQKZAJIznJCGc/Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			70tvr3yH2PDXdEv6gqjetx0TinyXpq8OFnFfgJf7nPc=
+			M0Xpqhfh5ug9H8ycRIADACFj72n0hIdzm7ymQmFigmo=
 			</data>
 		</dict>
 		<key>www/cordova-js-src/exec.js</key>
@@ -2562,11 +2562,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BtOYy9yChDkNVIq3gSvWPJr6LLI=
+			zkAy2qPkowtc7YGEVahlGXovhKQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			07Km9CP5tk6AhWKIBsEEtO/L/lc+PlKeTdnvs/iU0R0=
+			4wSfryGf4mI8bxk5iBhwNxcBxX6aVPi9wJE+KxV7bEM=
 			</data>
 		</dict>
 		<key>www/fonts/FontAwesome.otf</key>
@@ -3442,11 +3442,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HjTrj5VDgFg40rQVW2C0rXv76N0=
+			hOzHeOhFNYYaBO5ZwzqGLLNnJ18=
 			</data>
 			<key>hash2</key>
 			<data>
-			SNKKA8coraGhG5gujfHf/SeDBku+JU5QWI6cA+XIKu4=
+			BjNVpqCz1QHaWmIpK4Lgsb9yNuGZ2Hy9RaffVFwOAqA=
 			</data>
 		</dict>
 		<key>www/js/jquery.min.js</key>

@@ -110,7 +110,7 @@
     <allow-intent href="itms-apps:*" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
-    <preference name="EnableViewportScale" value="false" />
+    <preference name="EnableViewportScale" value="true" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
     <preference name="SuppressesIncrementalRendering" value="false" />
