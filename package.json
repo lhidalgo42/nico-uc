@@ -3,10 +3,7 @@
     "version": "1.0.0",
     "displayName": "Medicina Hospitalaria",
     "cordova": {
-        "platforms": [
-            "android",
-            "ios"
-        ],
+        "platforms": [],
         "plugins": {
             "cordova-plugin-battery-status": {},
             "cordova-plugin-camera": {},
@@ -30,7 +27,6 @@
         }
     },
     "dependencies": {
-        "cordova-android": "~6.1.2",
         "cordova-plugin-battery-status": "~1.1.1",
         "cordova-plugin-camera": "~2.1.1",
         "cordova-plugin-console": "~1.0.2",
@@ -49,7 +45,6 @@
         "cordova-plugin-splashscreen": "~3.2.1",
         "cordova-plugin-statusbar": "~2.1.2",
         "cordova-plugin-vibration": "~2.1.0",
-        "cordova-plugin-whitelist": "~1.2.1",
-        "cordova-ios": "~4.4.0"
+        "cordova-plugin-whitelist": "~1.2.1"
     }
 }
