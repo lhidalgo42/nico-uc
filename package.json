@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "displayName": "Medicina Hospitalaria",
     "cordova": {
-        "platforms": [],
+        "platforms": [
+            "browser"
+        ],
         "plugins": {
             "cordova-plugin-battery-status": {},
             "cordova-plugin-camera": {},
@@ -27,6 +29,7 @@
         }
     },
     "dependencies": {
+        "cordova-browser": "^4.1.0",
         "cordova-plugin-battery-status": "~1.1.1",
         "cordova-plugin-camera": "~2.1.1",
         "cordova-plugin-console": "~1.0.2",
