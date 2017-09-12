@@ -17,6 +17,8 @@
 <script src="js/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
+        var last = [];
+        window.sessionStorage.setItem('last', JSON.stringify(last));
         if (window.sessionStorage.getItem("login") == null)
             window.location.href = "intro.html";
         else

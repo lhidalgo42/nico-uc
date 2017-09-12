@@ -6,14 +6,7 @@
     <title>Calculadora</title>
     <link href="css/animate.css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
     <style>
-        .home {
-            height: 100%;
-            position:relative;
-            background:   url("img/slides/file-page59.jpg")no-repeat;
-            background-size: 100% 100%;
-        }
         option{
             height: 5%;
             position: absolute;
@@ -41,9 +34,18 @@
             left: 30%;
         }
     </style>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/javascript.js"></script>
+
 </head>
 <body>
-<div class="content">
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/file-page59.jpg">
     <div class="home" style="display: block">
         <label for="dosis" style="top: 20%;">Dosis</label>
         <select id="dosis" class="form-control" style="top: 20%;"></select>

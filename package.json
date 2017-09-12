@@ -4,6 +4,7 @@
     "displayName": "Medicina Hospitalaria",
     "cordova": {
         "platforms": [
+            "android",
             "browser"
         ],
         "plugins": {
@@ -29,6 +30,7 @@
         }
     },
     "dependencies": {
+        "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
         "cordova-plugin-battery-status": "~1.1.1",
         "cordova-plugin-camera": "~2.1.1",
