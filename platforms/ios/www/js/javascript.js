@@ -1,18 +1,20 @@
 
 $(document).ready(function () {
     $("img").css('height', ($(window).height() - 10)).css('width', $(window).width());
-    $("#back").click(function () {
+    $("#back").click(function (e) {
+        e.preventDefault();
         var last = JSON.parse(window.sessionStorage.getItem('last'));
         var go = last.pop();
-        console.log(last);
         window.sessionStorage.setItem('last', JSON.stringify(last));
         window.location.href = go;
     });
-    $("a:not(#back)").click(function () {
+    $("a:not(#back)").click(function (e) {
+            e.preventDefault();
             var last = JSON.parse(window.sessionStorage.getItem('last'));
             last.push(window.location.pathname);
             console.log(last);
             window.sessionStorage.setItem('last', JSON.stringify(last));
+            window.location.href = $(this).attr('href');
     });
 
 });
