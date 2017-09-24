@@ -9,9 +9,9 @@ body {
 a, button {
     position: absolute;
 
-    opacity: 0.5;
+//    opacity: 0.5;
 
-    background-color: black;
+  /|  background-color: black;
 
 }
 .home img{ -webkit-transform:translate3d(0,0,0) }
