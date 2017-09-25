@@ -1,5 +1,23 @@
 
 $(document).ready(function () {
+    $("a").addClass('prevented');
+    $("a").click(function (e) {
+        if($(this).hasClass('prevented')){
+            e.preventDefault();
+        }
+    });
+    setTimeout(function () {
+        $("a").removeClass("prevented");
+        $("a:not(#back)").click(function (e) {
+            e.preventDefault();
+            var last = JSON.parse(window.sessionStorage.getItem('last'));
+            last.push(window.location.pathname);
+            console.log(last);
+            window.sessionStorage.setItem('last', JSON.stringify(last));
+            window.location.href = $(this).attr('href');
+        });
+    },400);
+
     $("img").css('height', ($(window).height() - 10)).css('width', $(window).width());
     $("#back").click(function (e) {
         e.preventDefault();
@@ -8,14 +26,7 @@ $(document).ready(function () {
         window.sessionStorage.setItem('last', JSON.stringify(last));
         window.location.href = go;
     });
-    $("a:not(#back)").click(function (e) {
-            e.preventDefault();
-            var last = JSON.parse(window.sessionStorage.getItem('last'));
-            last.push(window.location.pathname);
-            console.log(last);
-            window.sessionStorage.setItem('last', JSON.stringify(last));
-            window.location.href = $(this).attr('href');
-    });
+
 
 });
 var myScroll;
