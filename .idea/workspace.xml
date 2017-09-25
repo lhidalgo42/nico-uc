@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="bfa31456-1766-47d3-86b2-ca30bebef099" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/css/stylesheet.css" afterPath="$PROJECT_DIR$/platforms/android/assets/www/css/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/css/stylesheet.css" afterPath="$PROJECT_DIR$/platforms/browser/www/css/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/css/stylesheet.css" afterPath="$PROJECT_DIR$/platforms/ios/www/css/stylesheet.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/stylesheet.css" afterPath="$PROJECT_DIR$/www/css/stylesheet.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/android/assets/www/17.html" afterPath="$PROJECT_DIR$/platforms/android/assets/www/17.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/browser/www/17.html" afterPath="$PROJECT_DIR$/platforms/browser/www/17.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/17.html" afterPath="$PROJECT_DIR$/platforms/ios/www/17.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/17.html" afterPath="$PROJECT_DIR$/www/17.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,17 +26,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="17.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="17.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/17.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2329">
-              <caret line="260" column="7" lean-forward="true" selection-start-line="260" selection-start-column="7" selection-end-line="260" selection-end-column="7" />
+            <state relative-caret-position="187">
+              <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1506303397818" expanded="true" signature="5455:5473" ph="..." />
+                <marker date="1506304331023" expanded="true" signature="4585:4603" ph="..." />
               </folding>
             </state>
           </provider>
@@ -66,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/stylesheet.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <marker date="1506303824513" expanded="true" signature="114:141" ph="{...}" />
               </folding>
@@ -234,8 +234,8 @@
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/43.html" />
         <option value="$PROJECT_DIR$/www/js/javascript.js" />
-        <option value="$PROJECT_DIR$/www/17.html" />
         <option value="$PROJECT_DIR$/www/css/stylesheet.css" />
+        <option value="$PROJECT_DIR$/www/17.html" />
       </list>
     </option>
   </component>
@@ -534,12 +534,12 @@
       <workItem from="1505269869817" duration="3607000" />
       <workItem from="1506029308345" duration="1931000" />
       <workItem from="1506231593021" duration="3721000" />
-      <workItem from="1506303043544" duration="777000" />
+      <workItem from="1506303043544" duration="1354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118848000" />
+    <option name="totallyTimeSpent" value="119425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -552,7 +552,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21130952" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -560,7 +559,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3338816" sideWeight="0.484985" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3338816" sideWeight="0.484985" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -943,26 +942,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1506303824513" expanded="true" signature="114:141" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/17.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2329">
-          <caret line="260" column="7" lean-forward="true" selection-start-line="260" selection-start-column="7" selection-end-line="260" selection-end-column="7" />
+        <state relative-caret-position="187">
+          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1506303397818" expanded="true" signature="5455:5473" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1506303824513" expanded="true" signature="114:141" ph="{...}" />
+            <marker date="1506304331023" expanded="true" signature="4585:4603" ph="..." />
           </folding>
         </state>
       </provider>
