@@ -15,3 +15,7 @@ a, button {
 
 }
 .home img{ -webkit-transform:translate3d(0,0,0) }
+
+select {
+    font-size: 20px;
+}
