@@ -1,5 +1,6 @@
 
 $(document).ready(function () {
+    $("#content").addClass('animated').addClass('fadeIn');
     $("a").addClass('prevented');
     $("a").click(function (e) {
         if($(this).hasClass('prevented')){
@@ -14,7 +15,11 @@ $(document).ready(function () {
             last.push(window.location.pathname);
             console.log(last);
             window.sessionStorage.setItem('last', JSON.stringify(last));
-            window.location.href = $(this).attr('href');
+            var go = $(this).attr('href');
+            $("#content").removeClass('fadeIn').addClass('fadeOut');
+            setTimeout(function () {
+                window.location.href = go;
+            },1000);
         });
     },400);
 
@@ -24,7 +29,11 @@ $(document).ready(function () {
         var last = JSON.parse(window.sessionStorage.getItem('last'));
         var go = last.pop();
         window.sessionStorage.setItem('last', JSON.stringify(last));
-        window.location.href = go;
+        $("#content").removeClass('fadeIn').addClass('fadeOut');
+        setTimeout(function () {
+            window.location.href = go;
+        },1000);
+
     });
 
 

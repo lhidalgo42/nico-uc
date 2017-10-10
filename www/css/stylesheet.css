@@ -8,14 +8,19 @@ body {
 
 a, button {
     position: absolute;
-
-//    opacity: 0.5;
-
-  /|  background-color: black;
-
+    /*
+    opacity: 0.5;
+    background-color: black;
+    */
 }
 .home img{ -webkit-transform:translate3d(0,0,0) }
 
 select {
-    font-size: 20px;
+    font-size: 25px;
+}
+
+#content {
+    -vendor-animation-duration: 2s;
+    -vendor-animation-delay: 1s;
+    -vendor-animation-iteration-count: infinite;
 }
