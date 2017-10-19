@@ -19,7 +19,7 @@ $(document).ready(function () {
             $("#content").removeClass('fadeIn').addClass('fadeOut');
             setTimeout(function () {
                 window.location.href = go;
-            },400);
+            },200);
         });
     },400);
 
@@ -32,7 +32,7 @@ $(document).ready(function () {
         $("#content").removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function () {
             window.location.href = go;
-        },400);
+        },200);
 
     });
 
