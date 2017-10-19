@@ -20,7 +20,7 @@ select {
 }
 
 #content {
-    -vendor-animation-duration: 0.2s;
-    -vendor-animation-delay: 0s;
+    -vendor-animation-duration: 0.05s;
+    -vendor-animation-delay: 0.05s;
     -vendor-animation-iteration-count: infinite;
 }

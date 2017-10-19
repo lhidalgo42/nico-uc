@@ -5,30 +5,10 @@
   "cordova": {
     "platforms": [],
     "plugins": {
-      "cordova-plugin-console": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-device-motion": {},
-      "cordova-plugin-device-orientation": {},
-      "cordova-plugin-dialogs": {},
-      "cordova-plugin-file-transfer": {},
-      "cordova-plugin-globalization": {},
-      "cordova-plugin-media": {},
-      "cordova-plugin-network-information": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-vibration": {}
+      "cordova-plugin-media": {}
     }
   },
   "dependencies": {
-    "cordova-plugin-console": "~1.0.2",
-    "cordova-plugin-device": "~1.1.1",
-    "cordova-plugin-device-motion": "~1.2.0",
-    "cordova-plugin-device-orientation": "~1.0.2",
-    "cordova-plugin-dialogs": "~1.2.0",
-    "cordova-plugin-file-transfer": "~1.5.0",
-    "cordova-plugin-globalization": "~1.0.3",
-    "cordova-plugin-media": "~2.2.0",
-    "cordova-plugin-network-information": "~1.2.0",
-    "cordova-plugin-statusbar": "~2.1.2",
-    "cordova-plugin-vibration": "~2.1.0"
+    "cordova-plugin-media": "~2.2.0"
   }
 }
