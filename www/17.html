@@ -16,21 +16,8 @@
     <style>
 
         span{
-            position: absolute;
-            font-size: 1.1em;
-            font-family: Arial;
             font-weight: bold;
             color: #600c04;
-            text-align: center;
-
-        }
-        #fentanyl{
-            top: 32.1%;
-            left: 41.4%;
-        }
-        #lidocaina{
-            top: 34.85%;
-            left: 42.1%;
         }
         #midazolam{
             top: 37.8%;
@@ -82,6 +69,71 @@
             background-color: #000;
             border-radius: 4px;
         }
+        #preparacion{
+            background-color: #fff59b;
+            border: solid 1px black;
+            position: absolute;
+            font-family: Arial;
+            font-size: 1.1rem;
+            top :17%;
+            right: 3%;
+            width: 63%;
+            height: 7.5%;
+            padding-left: 23px;
+            padding-top: 10px;
+        }
+        #oxigenacion{
+            background-color: #fff15f;
+            border: solid 1px black;
+            position: absolute;
+            font-family: Arial;
+            font-size: 1.1rem;
+            top :26.5%;
+            right: 3%;
+            width: 63%;
+            height: 4%;
+            padding-left: 23px;
+            padding-top: 10px;
+        }
+        #premedicacion{
+            background-color: #cfe09b;
+            border: solid 1px black;
+            position: absolute;
+            font-family: Arial;
+            font-size: 1.1rem;
+            top :31.5%;
+            right: 3%;
+            width: 63%;
+            height: 4%;
+            padding-left: 23px;
+            padding-top: 10px;
+        }
+        #induccion{
+            background-color: #b7d167;
+            border: solid 1px black;
+            position: absolute;
+            font-family: Arial;
+            font-size: 1.1rem;
+            top :37%;
+            right: 3%;
+            width: 63%;
+            height: 5.2%;
+            padding-left: 23px;
+            padding-top: 10px;
+        }
+        #paralizacion{
+            background-color: #95c11f;
+            border: solid 1px black;
+            position: absolute;
+            font-family: Arial;
+            font-size: 1.1rem;
+            top :44.4%;
+            right: 3%;
+            width: 63%;
+            height: 4.1%;
+            padding-left: 23px;
+            padding-top: 10px;
+        }
     </style>
 
 
@@ -91,18 +143,40 @@
     <div class="home" style="display: block">
         <img src="img/slides/file-page19.jpg">
     <div class="home" style="display: block">
-        <span id="fentanyl">2 - 3 ug/kg</span>
-        <span id="lidocaina">1,5 mg/kg</span>
-        <span id="midazolam">0,1 - 0,3 mg/kg</span>
-        <span id="propofol">1,5 - 2 mg/kg</span>
-        <span id="etomidato">0,3 mg/kg</span>
-        <span id="ketamina">1,5 - 2 mg/kg</span>
-        <span id="sucinilcolina">1,5 - 2 mg/kg</span>
-        <span id="rocuronio">0,6 - 1,2 mg/kg</span>
+        <div id="preparacion">
+             Activar código azul y Organizar al equipo de salud<br>
+             Conectar al monitor (PA, FC, SAT, FR)  /  Retiro de protesis dental<br>
+             Revisar equipos: Fuente oxigeno, laringoscopio, tubos, etc.<br>
+             Contar con equipos de vía aérea dificil: Boogie, conductor, etc<br>
+             Siempre 2 operadores y Contar con Plan B (ej. Máscara laríngea)<br>
+             Definir drogas, preprar infusion de SF y preparar drogas vasoactivas
+        </div>
+        <div id="oxigenacion">
+            Conciente: O2 al 100% por mascarilla de alto flujo<br>
+            (3-5 min u 8 respiraciones max) <br>
+            Inconciente: Cánula orofaringea y Bolsa autoinflable
+        </div>
+        <div id="premedicacion">
+            Fentanyl: <span id="fentanyl">2 - 3 ug/kg</span>: Preferir dosis bajas en pacientes <br>
+            hipovolemicos e hiperadrenérgicos <br>
+            Lidocaina: <span id="lidocaina">1,5 mg/kg</span>: En <button style="background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Hipertensión intracraneana">HIC</button> y obstrucción bronquial
+        </div>
+        <div id="induccion">
+            Midazolam <span id="midazolam">0,1 - 0,3 mg/kg</span>: En normotensión <br>
+            Propofol <span id="propofol">1,5 - 2 mg/kg</span>: En normotensión <br>
+            Etomidato <span id="etomidato">0,3 mg/kg</span>: En hipotensión <br>
+            Ketamina <span id="ketamina">1,5 - 2 mg/kg</span>: En hipotensión, En estatus asmático, No en <button style="background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Hipertensión intracraneana">HIC</button>
+        </div>
+        <div id="paralizacion">
+            Succinilcolina <span id="sucinilcolina">1,5 - 2 mg/kg</span>: No en hiperK, ni antec de <br>
+            hipertermia maligna. Duración: 6-12 min <br>
+            Rocuronio <span id="rocuronio">0,6 - 1,2 mg/kg</span>: sin contraindicaciones. Duración 15-120 min
+        </div>
+
+
 
         <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91.5%;"></a>
-        <button style="position:absolute;width: 4.3%;height: 3%;left: 91.7%;top: 40.5%;background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Hipertensión intracraneana"></button>
-        <button style="position:absolute;width: 4.3%;height: 3%;left: 54.7%;top: 34.5%;background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Hipertensión intracraneana"></button>
+
         <select style="width: 100px;height: 4%;left: 60.7%;top: 93%;position: absolute" id="peso">
             <option value="0">Peso en KG</option>
         </select>

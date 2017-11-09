@@ -3,12 +3,23 @@
   "version": "1.0.0",
   "displayName": "Medicina Hospitalaria",
   "cordova": {
-    "platforms": [],
+    "platforms": [
+      "android"
+    ],
     "plugins": {
-      "cordova-plugin-media": {}
+      "cordova-plugin-media": {},
+      "cordova-android-support-gradle-release": {
+        "ANDROID_SUPPORT_VERSION": "26.+"
+      },
+      "cordova-android-play-services-gradle-release": {}
     }
   },
   "dependencies": {
-    "cordova-plugin-media": "~2.2.0"
+    "cordova-android": "*",
+    "cordova-android-support-gradle-release": "^1.1.4",
+    "cordova-plugin-compat": "*",
+    "cordova-plugin-file": "*",
+    "cordova-plugin-media": "^3.0.1",
+    "cordova-android-play-services-gradle-release": "1.1.3"
   }
 }
