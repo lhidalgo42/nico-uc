@@ -1,31 +1,57 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="lhidalgo42.nicolas.triantafilo" version="1.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="lhidalgo42.nicolas.triantafilo" version="1.3.2" versionCode="" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Medicina Hospitalaria</name>
-    <description>
-        Guía para el residente de turno.
-    </description>
-    <author email="lhidalgosep@gmail.com" href="http://invoicechile.cl/lhidalgo">
-        Leonardo Hidalgo
-    </author>
-    <content src="index.html" />
-    <preference name="EnableViewportScale" value="true" />
+    <description>Guía para el residente de turno.</description>
+    <author email="lhidalgosep@gmail.com" href="http://invoicechile.cl/lhidalgo">Leonardo Hidalgo</author>
+    <feature name="http://api.phonegap.com/1.0/battery" />
+    <feature name="http://api.phonegap.com/1.0/camera" />
+    <feature name="http://api.phonegap.com/1.0/contacts" />
+    <feature name="http://api.phonegap.com/1.0/file" />
+    <feature name="http://api.phonegap.com/1.0/geolocation" />
+    <feature name="http://api.phonegap.com/1.0/media" />
+    <feature name="http://api.phonegap.com/1.0/network" />
+    <feature name="http://api.phonegap.com/1.0/notification" />
+    <preference name="phonegap-version" value="cli-6.3.0" />
+    <preference name="android-build-tool" value="gradle" />
+    <preference name="orientation" value="default" />
+    <preference name="fullscreen" value="true" />
+    <preference name="target-device" value="universal" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="false" />
+    <preference name="stay-in-webview" value="true" />
+    <preference name="ios-statusbarstyle" value="default" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="true" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="FadeSplashScreen " value="true" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="BackupWebStorage" value="local" />
+    <preference name="TopActivityIndicator" value="white" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="KeyboardShrinksView " value="true" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="windows-identity-name" value="" />
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="android-targetSdkVersion" value="23" />
+    <preference name="android-maxSdkVersion" value="0" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="ErrorUrl" value="null" />
+    <preference name="BackgroundColor" value="0x000000" />
     <preference name="DisallowOverscroll" value="false" />
-    <preference name="Fullscreen" value="true" />
-    <preference name="Orientation" value="portrait" />
-    <preference name="android-minSdkVersion" value="16" />
-    <platform name="android">
-        <icon density="xxxhdpi" src="www/img/icon.jpg" />
-    </platform>
+    <preference name="LoadingDialog" value="," />
+    <preference name="LoadUrlTimeoutValue" value="null" />
     <platform name="ios">
-        <icon height="114" platform="ios" src="www/img/icon.jpg" width="114" />
     </platform>
-    <platform name="wp8">
-        <icon height="159" platform="wp8" src="www/img/icon.jpg" width="159" />
+    <platform name="android">
     </platform>
-    <platform name="windows">
-        <icon height="150" platform="windows" src="www/img/icon.jpg" width="150" />
+    <platform name="winphone">
     </platform>
-    <access origin="*" />
+    <icon src="www/img/icon.png" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
@@ -37,12 +63,43 @@
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+    </platform>
+    <platform name="ios">
         <allow-intent href="itms-apps:*" />
     </platform>
     <engine name="android" spec="*" />
     <plugin name="cordova-plugin-media" spec="^3.0.1" />
-    <plugin name="cordova-android-support-gradle-release" spec="^1.1.4">
+    <plugin name="cordova-android-support-gradle-release">
         <variable name="ANDROID_SUPPORT_VERSION" value="26.+" />
     </plugin>
-    <plugin name="cordova-android-play-services-gradle-release" spec="1.1.3" />
 </widget>

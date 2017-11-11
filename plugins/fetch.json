@@ -29,14 +29,8 @@
       "id": "cordova-android-support-gradle-release"
     },
     "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-android-play-services-gradle-release": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-android-play-services-gradle-release@1.1.3"
-    },
-    "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "ANDROID_SUPPORT_VERSION": "26.+"
+    }
   }
 }
