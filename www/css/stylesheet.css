@@ -15,9 +15,6 @@ a, button {
 }
 .home img{ -webkit-transform:translate3d(0,0,0) }
 
-select {
-    font-size: 25px;
-}
 
 .fadeIn {
      -webkit-animation: fadeIn 0.4s; /* Safari 4+ */
