@@ -31,7 +31,6 @@
         .home img{ -webkit-transform:translate3d(0,0,0) }
 
         select {
-            font-size: 25px;
         }
 
         .fadeIn {
@@ -52,7 +51,7 @@
         }
         .text{
             position: absolute;
-            font-size: 8px;
+            font-size: 7px;
             font-family: Arial;
             color: black;
             left: 32%;
@@ -81,31 +80,6 @@
         #rocuronio{
             top: 47.3%;
         }
-        .tooltip {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 17px;
-            font-style: normal;
-            font-weight: normal;
-            line-height: 1.42857143;
-            text-align: start;
-            text-decoration: none;
-            text-shadow: none;
-            text-transform: none;
-            letter-spacing: normal;
-            word-break: normal;
-            word-spacing: normal;
-            word-wrap: normal;
-            white-space: normal;
-            /* ... */
-        }
-        .tooltip-inner {
-            max-width: 200px;
-            padding: 3px 8px;
-            color: #fff;
-            text-align: center;
-            background-color: #000;
-            border-radius: 4px;
-        }
     </style>
 
 
@@ -128,7 +102,7 @@
 
             <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91.5%;"></a>
             <select style="left: 60%;top: 92%;position: absolute" id="peso">
-                <option value="1">Peso en KG</option>
+                <option value="0">Peso en KG</option>
             </select>
         </div>
     </div>
@@ -179,10 +153,14 @@
             var lower = 2;
             var upper = 3;
             var unit = "ug";
+            var dosis = "";
             var peso = $("#peso").val();
             if(peso == 0 || peso == "")
-                peso = 1;
-            var text = "Fentanyl: <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> :Preferir dosis bajas en pacientes";
+                dosis = "2 - 3 ug/kg";
+            else
+                dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+
+            var text = "Fentanyl: <span class='dosis'>"+dosis+"</span> :Preferir dosis bajas en pacientes";
             return text;
         }
         function sucinilcolina() {
@@ -190,17 +168,26 @@
             var upper = 2;
             var unit = "mg";
             var peso = $("#peso").val();
-            if(peso == 0 || peso == "") peso = 1;
-            var text = "Succinilcolina <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> No en hiperK, ni antec de";
+            var dosis = "";
+            if(peso == 0 || peso == "")
+                dosis = "1,5-2 mg/kg";
+            else
+                dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+
+            var text = "Succinilcolina <span class='dosis'>"+dosis+"</span> No en hiperK, ni antec de";
             return text;
         }
         function rocuronio() {
             var lower = 0.6;
             var upper = 1.2;
             var unit = "mg";
+            var dosis = "";
             var peso = $("#peso").val();
-            if(peso == 0 || peso == "") peso = 1;
-            var text = "Rocuronio <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> :sin contraindicaciones. Duración 15-120 min";
+            if(peso == 0 || peso == "")
+                dosis = "0,6 - 1,2 mg/kg";
+            else
+                dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            var text = "Rocuronio <span class='dosis'>"+dosis+"</span> :sin contraindicaciones. Duración 15-120 min";
             return text;
         }
         function propofol() {
@@ -208,9 +195,13 @@
             var upper = 2;
             var unit = "mg";
             var peso = $("#peso").val();
+            var dosis = "";
             if(peso == 0 || peso == "")
-                peso = 1;
-            var text = "Propofol <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> En normotensión";
+                dosis = "1,5 - 2 mg/kg";
+            else
+                dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+
+            var text = "Propofol <span class='dosis'>"+dosis+"</span> En normotensión";
             return text;
         }
         function midazolam() {
@@ -218,9 +209,12 @@
             var upper = 0.3;
             var unit = "mg";
             var peso = $("#peso").val();
+            var dosis = "";
             if(peso == 0 || peso == "")
-                peso = 1;
-            var text = "Midazolam  <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> : En normotensión";
+                dosis = "0,1-0,3 mg/kg";
+            else
+                dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            var text = "Midazolam  <span class='dosis'>"+dosis+"</span> : En normotensión";
             return text;
         }
         function ketamina() {
@@ -228,19 +222,25 @@
             var upper = 2;
             var unit = "mg";
             var peso = $("#peso").val();
+            var dosis = '';
             if(peso == 0 || peso == "")
-                peso = 1;
-            var text = "Ketamina <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> : En hipotensión, En estatus asmático, No en HIC";
+                dosis = "1,5 - 2 mg/kg";
+            else
+                dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            var text = "Ketamina <span class='dosis'>"+dosis+"</span> : En hipotensión, En estatus asmático, No en HIC";
             return text;
         }
         function lidocaina() {
 
             var lower = 1.5;
             var unit = "mg";
-            var peso = $("#peso").val();
+            var peso = $("#peso").val()
+            var dosis = "";
             if(peso == 0 || peso == "")
-                peso = 1;
-            var text = "Lidocaina: <span class='dosis'>"+Math.round(lower*peso) +" "+unit+"</span> :En HIC y obstrucción bronquial";
+                dosis = "1,5 mg/kg";
+            else
+                dosis = Math.round(lower*peso) +" "+unit;
+            var text = "Lidocaina: <span class='dosis'>"+dosis+"</span> :En HIC y obstrucción bronquial";
             return text;
         }
         function etomidato() {
@@ -248,9 +248,12 @@
             var lower = 0.3;
             var unit = "mg";
             var peso = $("#peso").val();
+            var dosis = "";
             if(peso == 0 || peso == "")
-                peso = 1;
-            var text = "Etomidato <span class='dosis'>"+Math.round(lower*peso) +" "+unit+"</span> : En hipotensión";
+                dosis = "0,3 mg/kg";
+            else
+                dosis = Math.round(lower*peso) +" "+unit;
+            var text = "Etomidato <span class='dosis'>"+dosis+"</span> : En hipotensión";
             return text;
         }
 
