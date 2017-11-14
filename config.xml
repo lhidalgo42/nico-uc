@@ -15,6 +15,13 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="android-minSdkVersion" value="21" />
+    <preference name="android-targetSdkVersion" value="23" />
+    <preference name="android-maxSdkVersion" value="0" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="orientation" value="default" />
+    <preference name="fullscreen" value="true" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
@@ -22,11 +29,8 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <icon src="icon.png" />
+    <icon src="img/icon.png" />
     <engine name="android" spec="*" />
     <plugin name="cordova-plugin-media" spec="^3.0.1" />
-    <plugin name="cordova-android-support-gradle-release">
-        <variable name="ANDROID_SUPPORT_VERSION" value="26.+" />
-    </plugin>
     <plugin name="cordova-plugin-whitelist" spec="1" />
 </widget>
