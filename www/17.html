@@ -64,16 +64,16 @@
             top: 34.5%;
         }
         #midazolam{
-            top: 37.4%;
+            top: 37.35%;
         }
         #propofol{
-            top: 38.7%;
+            top: 38.65%;
         }
         #etomidato{
-            top: 40.2%;
+            top: 40.15%;
         }
         #ketamina{
-            top: 41.6%;
+            top: 41.55%;
         }
         #sucinilcolina{
             top: 44.25%;
@@ -141,7 +141,7 @@
             var peso = $("#peso").val();
             var dosis = "";
             if(peso == 0 || peso == "")
-                dosis = "1,5-2 mg/kg";
+                dosis = "1,5 - 2 mg/kg";
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
 
@@ -182,7 +182,7 @@
             var peso = $("#peso").val();
             var dosis = "";
             if(peso == 0 || peso == "")
-                dosis = "0,1-0,3 mg/kg";
+                dosis = "0,1 - 0,3 mg/kg";
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
             var text = "Midazolam  <span class='dosis'>"+dosis+"</span> : En normotensión";
