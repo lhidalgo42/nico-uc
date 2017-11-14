@@ -58,28 +58,28 @@
             letter-spacing: -0.5px;
         }
         #fentanyl{
-            top: 31.9%;
+            top: 31.8%;
         }
         #lidocaina{
-            top: 34.6%;
+            top: 34.5%;
         }
         #midazolam{
-            top: 37.5%;
+            top: 37.4%;
         }
         #propofol{
-            top: 38.8%;
+            top: 38.7%;
         }
         #etomidato{
-            top: 40.3%;
+            top: 40.2%;
         }
         #ketamina{
-            top: 41.7%;
+            top: 41.6%;
         }
         #sucinilcolina{
-            top: 44.35%;
+            top: 44.25%;
         }
         #rocuronio{
-            top: 47.3%;
+            top: 47.2%;
         }
     </style>
 
@@ -161,7 +161,7 @@
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
 
-            var text = "Fentanyl: <span class='dosis'>"+dosis+"</span> :Preferir dosis bajas en pacientes";
+            var text = "Fentanyl: <span class='dosis'>"+dosis+"</span> : Preferir dosis bajas en pacientes";
             return text;
         }
         function sucinilcolina() {
@@ -175,7 +175,7 @@
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
 
-            var text = "Succinilcolina <span class='dosis'>"+dosis+"</span> No en hiperK, ni antec de";
+            var text = "Succinilcolina <span class='dosis'>"+dosis+"</span> : No en hiperK, ni antec de";
             return text;
         }
         function rocuronio() {
@@ -188,7 +188,7 @@
                 dosis = "0,6 - 1,2 mg/kg";
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
-            var text = "Rocuronio <span class='dosis'>"+dosis+"</span> :sin contraindicaciones. Duración 15-120 min";
+            var text = "Rocuronio <span class='dosis'>"+dosis+"</span> : sin contraindicaciones. Duración 15-120 min";
             return text;
         }
         function propofol() {
@@ -202,7 +202,7 @@
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
 
-            var text = "Propofol <span class='dosis'>"+dosis+"</span> En normotensión";
+            var text = "Propofol <span class='dosis'>"+dosis+"</span> : En normotensión";
             return text;
         }
         function midazolam() {
@@ -241,7 +241,7 @@
                 dosis = "1,5 mg/kg";
             else
                 dosis = Math.round(lower*peso) +" "+unit;
-            var text = "Lidocaina: <span class='dosis'>"+dosis+"</span> :En HIC y obstrucción bronquial";
+            var text = "Lidocaina: <span class='dosis'>"+dosis+"</span> : En HIC y obstrucción bronquial";
             return text;
         }
         function etomidato() {
