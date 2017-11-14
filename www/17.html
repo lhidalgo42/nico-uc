@@ -112,36 +112,6 @@
 
     <script>
 
-        $(document).ready(function () {
-            $("#content").addClass('animated').addClass('fadeIn');
-            $("img").css('height', ($(window).height() - 10)).css('width', $(window).width());
-            $("a").click(function (e) {
-                e.preventDefault();
-                $("#content").removeClass('fadeIn').addClass('fadeOut');
-                setTimeout(function () {
-                    window.location.href = "/home.html";
-                },200);
-            });
-        });
-        var myScroll;
-        function loaded() {
-            myScroll = new iScroll('content', {
-                zoom: true,
-                zoomMax: 4,
-                onBeforeScrollStart:false
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', loaded, false);
-        $(document).ready(function () {
-            var selects = document.getElementsByTagName('select');
-            for(var i=0;i<selects.length;i++) {
-                selects[i].addEventListener('touchstart' /*'mousedown'*/, function (e) {
-                    e.stopPropagation();
-                }, false);
-            }
-        });
-
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
