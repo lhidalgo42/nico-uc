@@ -31,7 +31,7 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <icon src="img/icon.png" />
+    <engine name="android" spec="^6.4.0" />
     <plugin name="cordova-plugin-media" spec="^3.0.1" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <engine name="android" spec="^6.4.0" />
 </widget>

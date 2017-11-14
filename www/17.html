@@ -58,28 +58,28 @@
             left: 32%;
         }
         #fentanyl{
-            top: 196px;
+            top: 31.9%;
         }
         #lidocaina{
-            top: 212px;
+            top: 34.6%;
         }
         #midazolam{
-            top: 37.8%;
+            top: 37.5%;
         }
         #propofol{
-            top: 39.1%;
+            top: 38.8%;
         }
         #etomidato{
-            top: 40.45%;
+            top: 40.3%;
         }
         #ketamina{
-            top: 41.8%;
+            top: 41.7%;
         }
         #sucinilcolina{
-            top: 44.75%;
+            top: 44.35%;
         }
         #rocuronio{
-            top: 47.5%;
+            top: 47.3%;
         }
         .tooltip {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -116,13 +116,14 @@
         <img src="img/slides/file-page19.jpg">
         <div class="home" style="display: block">
             <div id="fentanyl" class="text"></div>
-            <div class="text" style="top: 203px;">hipovolemicos e hiperadrenérgicos</div>
+            <div class="text" style="top: 33.2%">hipovolemicos e hiperadrenérgicos</div>
             <div id="lidocaina" class="text"></div>
             <div id="midazolam" class="text"></div>
             <div id="propofol" class="text"></div>
             <div id="etomidato" class="text"></div>
             <div id="ketamina" class="text"></div>
             <div id="sucinilcolina" class="text"></div>
+            <div class="text" style="top: 45.6%;">hipertermia maligna. Duración: 6-12 min</div>
             <div id="rocuronio" class="text"></div>
 
             <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91.5%;"></a>
@@ -229,7 +230,7 @@
             var peso = $("#peso").val();
             if(peso == 0 || peso == "")
                 peso = 1;
-            var text = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            var text = "Ketamina <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> : En hipotensión, En estatus asmático, No en HIC";
             return text;
         }
         function lidocaina() {
@@ -249,7 +250,7 @@
             var peso = $("#peso").val();
             if(peso == 0 || peso == "")
                 peso = 1;
-            var text = Math.round(lower*peso) +" "+unit;
+            var text = "Etomidato <span class='dosis'>"+Math.round(lower*peso) +" "+unit+"</span> : En hipotensión";
             return text;
         }
 
