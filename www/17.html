@@ -47,45 +47,39 @@
             animation:         fadeOut 0.4s; /* IE 10+, Fx 29+ */
         }
         span{
-            position: absolute;
-            font-size: 18px;
-            font-family: Arial;
             font-weight: bold;
             color: #600c04;
-            text-align: center;
-
+        }
+        .text{
+            position: absolute;
+            font-size: 9px;
+            font-family: Arial;
+            color: black;
+            left: 140px;
         }
         #fentanyl{
-            top: 32.1%;
-            left: 41.4%;
+            top: 179px;
         }
         #lidocaina{
-            top: 34.85%;
-            left: 42.1%;
+            top: 192px;
         }
         #midazolam{
             top: 37.8%;
-            left: 42%;
         }
         #propofol{
             top: 39.1%;
-            left: 40.3%;
         }
         #etomidato{
             top: 40.45%;
-            left: 41.9%;
         }
         #ketamina{
             top: 41.8%;
-            left: 41.1%;
         }
         #sucinilcolina{
             top: 44.75%;
-            left: 44.9%;
         }
         #rocuronio{
             top: 47.5%;
-            left: 41.1%;
         }
         .tooltip {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -121,14 +115,15 @@
     <div class="home" style="display: block">
         <img src="img/slides/file-page19.jpg">
         <div class="home" style="display: block">
-            <span id="fentanyl">2 - 3 ug/kg</span>
-            <span id="lidocaina">1,5 mg/kg</span>
-            <span id="midazolam">0,1 - 0,3 mg/kg</span>
-            <span id="propofol">1,5 - 2 mg/kg</span>
-            <span id="etomidato">0,3 mg/kg</span>
-            <span id="ketamina">1,5 - 2 mg/kg</span>
-            <span id="sucinilcolina">1,5 - 2 mg/kg</span>
-            <span id="rocuronio">0,6 - 1,2 mg/kg</span>
+            <div id="fentanyl" class="text"></div>
+            <div class="text" style="top: 185px;">hipovolemicos e hiperadrenérgicos</div>
+            <div id="lidocaina" class="text"></div>
+            <div id="midazolam" class="text"></div>
+            <div id="propofol" class="text"></div>
+            <div id="etomidato" class="text"></div>
+            <div id="ketamina" class="text"></div>
+            <div id="sucinilcolina" class="text"></div>
+            <div id="rocuronio" class="text"></div>
 
             <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91.5%;"></a>
             <button style="position:absolute;width: 4.3%;height: 3%;left: 91.7%;top: 40.5%;background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Hipertensión intracraneana"></button>
@@ -199,7 +194,7 @@
             var peso = $("#peso").val();
             if(peso == 0 || peso == "")
                 peso = 1;
-            var text = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            var text = "Fentanyl: <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> :Preferir dosis bajas en pacientes";
             return text;
         }
         function sucinilcolina() {
@@ -207,9 +202,8 @@
             var upper = 2;
             var unit = "mg";
             var peso = $("#peso").val();
-            if(peso == 0 || peso == "")
-                peso = 1;
-            var text = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            if(peso == 0 || peso == "") peso = 1;
+            var text = "Succinilcolina <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> No en hiperK, ni antec de";
             return text;
         }
         function rocuronio() {
@@ -217,9 +211,8 @@
             var upper = 1.2;
             var unit = "mg";
             var peso = $("#peso").val();
-            if(peso == 0 || peso == "")
-                peso = 1;
-            var text = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            if(peso == 0 || peso == "") peso = 1;
+            var text = "<span style='color:black;'>Rocuronio</span>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+" <span style='color: black'>:sin contraindicaciones. Duración 15-120 min</span>";
             return text;
         }
         function propofol() {
@@ -259,7 +252,7 @@
             var peso = $("#peso").val();
             if(peso == 0 || peso == "")
                 peso = 1;
-            var text = Math.round(lower*peso) +" "+unit;
+            var text = "Lidocaina: <span class='dosis'>"+Math.round(lower*peso) +" "+unit+"</span> :En HIC y obstrucción bronquial";
             return text;
         }
         function etomidato() {
@@ -283,6 +276,14 @@
             $("#sucinilcolina").html(sucinilcolina());
             $("#rocuronio").html(rocuronio());
         })
+        $("#fentanyl").html(fentanyl());
+        $("#lidocaina").html(lidocaina());
+        $("#midazolam").html(midazolam());
+        $("#propofol").html(propofol());
+        $("#etomidato").html(etomidato());
+        $("#ketamina").html(ketamina());
+        $("#sucinilcolina").html(sucinilcolina());
+        $("#rocuronio").html(rocuronio());
     </script>
 </body>
 </html>
