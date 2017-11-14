@@ -55,13 +55,13 @@
             font-size: 9px;
             font-family: Arial;
             color: black;
-            left: 140px;
+            left: 32%;
         }
         #fentanyl{
-            top: 179px;
+            top: 196px;
         }
         #lidocaina{
-            top: 192px;
+            top: 212px;
         }
         #midazolam{
             top: 37.8%;
@@ -116,7 +116,7 @@
         <img src="img/slides/file-page19.jpg">
         <div class="home" style="display: block">
             <div id="fentanyl" class="text"></div>
-            <div class="text" style="top: 185px;">hipovolemicos e hiperadrenérgicos</div>
+            <div class="text" style="top: 203px;">hipovolemicos e hiperadrenérgicos</div>
             <div id="lidocaina" class="text"></div>
             <div id="midazolam" class="text"></div>
             <div id="propofol" class="text"></div>
@@ -126,25 +126,12 @@
             <div id="rocuronio" class="text"></div>
 
             <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91.5%;"></a>
-            <button style="position:absolute;width: 4.3%;height: 3%;left: 91.7%;top: 40.5%;background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Hipertensión intracraneana"></button>
-            <button style="position:absolute;width: 4.3%;height: 3%;left: 54.7%;top: 34.5%;background-color: transparent;border: 0;" type="button" data-toggle="tooltip" data-placement="top" title="Hipertensión intracraneana"></button>
-            <select style="width: 100px;height: 4%;left: 60.7%;top: 93%;position: absolute" id="peso">
-                <option value="0">Peso en KG</option>
+            <select style="left: 60%;top: 92%;position: absolute" id="peso">
+                <option value="1">Peso en KG</option>
             </select>
         </div>
     </div>
-    <div class="modal fade" tabindex="-1" role="dialog" id="hicModal" style="top: 40%">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <div class="modal-body">
-                    <h3>Hipertensión intra craneana</h3>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <script>
@@ -212,7 +199,7 @@
             var unit = "mg";
             var peso = $("#peso").val();
             if(peso == 0 || peso == "") peso = 1;
-            var text = "<span style='color:black;'>Rocuronio</span>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+" <span style='color: black'>:sin contraindicaciones. Duración 15-120 min</span>";
+            var text = "Rocuronio <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> :sin contraindicaciones. Duración 15-120 min";
             return text;
         }
         function propofol() {
@@ -222,7 +209,7 @@
             var peso = $("#peso").val();
             if(peso == 0 || peso == "")
                 peso = 1;
-            var text = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            var text = "Propofol <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> En normotensión";
             return text;
         }
         function midazolam() {
@@ -232,7 +219,7 @@
             var peso = $("#peso").val();
             if(peso == 0 || peso == "")
                 peso = 1;
-            var text = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
+            var text = "Midazolam  <span class='dosis'>"+Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit+"</span> : En normotensión";
             return text;
         }
         function ketamina() {
