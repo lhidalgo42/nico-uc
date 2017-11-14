@@ -10,13 +10,15 @@
       "cordova-plugin-media": {},
       "cordova-android-support-gradle-release": {
         "ANDROID_SUPPORT_VERSION": "26.+"
-      }
+      },
+      "cordova-plugin-whitelist": {}
     }
   },
   "dependencies": {
     "cordova-android": "*",
     "cordova-plugin-compat": "*",
     "cordova-plugin-file": "*",
-    "cordova-plugin-media": "^3.0.1"
+    "cordova-plugin-media": "^3.0.1",
+    "cordova-plugin-whitelist": "1"
   }
 }

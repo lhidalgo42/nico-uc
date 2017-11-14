@@ -32,5 +32,13 @@
     "variables": {
       "ANDROID_SUPPORT_VERSION": "26.+"
     }
+  },
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
