@@ -8,13 +8,6 @@
         Leonardo Hidalgo
     </author>
     <content src="index.html" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
     <preference name="phonegap-version" value="cli-6.3.0" />
     <preference name="EnableViewportScale" value="false" />
     <preference name="android-minSdkVersion" value="21" />
@@ -23,8 +16,42 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="orientation" value="default" />
     <preference name="fullscreen" value="true" />
-
-    <icon src="www/img/icon.png" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon density="ldpi" src="www/res/icon/android/ldpi.png" />
+        <icon density="mdpi" src="www/res/icon/android/mdpi.png" />
+        <icon density="hdpi" src="www/res/icon/android/hdpi.png" />
+        <icon density="xhdpi" src="www/res/icon/android/xhdpi.png" />
+        <icon density="xxhdpi" src="www/res/icon/android/xxhdpi.png" />
+        <icon density="xxxhdpi" src="www/res/icon/android/xxxhdpi.png" />
+    </platform>
+    <platform name="ios">
+        <icon height="57" platform="ios" src="www/res/icon/ios/icon.png" width="57" />
+        <icon height="114" platform="ios" src="www/res/icon/ios/icon@2x.png" width="114" />
+        <icon height="40" platform="ios" src="www/res/icon/ios/icon-40.png" width="40" />
+        <icon height="80" platform="ios" src="www/res/icon/ios/icon-40@2x.png" width="80" />
+        <icon height="50" platform="ios" src="www/res/icon/ios/icon-50.png" width="50" />
+        <icon height="100" platform="ios" src="www/res/icon/ios/icon-50@2x.png" width="100" />
+        <icon height="60" platform="ios" src="www/res/icon/ios/icon-60.png" width="60" />
+        <icon height="120" platform="ios" src="www/res/icon/ios/icon-60@2x.png" width="120" />
+        <icon height="180" platform="ios" src="www/res/icon/ios/icon-60@3x.png" width="180" />
+        <icon height="72" platform="ios" src="www/res/icon/ios/icon-72.png" width="72" />
+        <icon height="144" platform="ios" src="www/res/icon/ios/icon-72@2x.png" width="144" />
+        <icon height="76" platform="ios" src="www/res/icon/ios/icon-76.png" width="76" />
+        <icon height="152" platform="ios" src="www/res/icon/ios/icon-76@2x.png" width="152" />
+        <icon height="29" platform="ios" src="www/res/icon/ios/icon-small.png" width="29" />
+        <icon height="58" platform="ios" src="www/res/icon/ios/icon-small@2x.png" width="58" />
+        <icon height="87" platform="ios" src="www/res/icon/ios/icon-small@3x.png" width="87" />
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
