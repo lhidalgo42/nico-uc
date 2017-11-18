@@ -6,9 +6,10 @@
 
     <!-- Bootstrap -->
     <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
     <script type="application/javascript" src="js/iscroll.js"></script>
 
-
+    <script src="js/sweetalert2.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/javascript.js"></script>
@@ -21,7 +22,7 @@
             top: 0; right: 0; bottom: 0; left: 0;
         }
 
-        a, button {
+        a{
             position: absolute;
             /*
             opacity: 0.5;
@@ -81,6 +82,93 @@
         #rocuronio{
             top: 47.2%;
         }
+        .tooltip {
+            position: absolute;
+            z-index: 1070;
+            display: block;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 7px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: left;
+            text-align: start;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            word-break: normal;
+            word-spacing: normal;
+            word-wrap: normal;
+            white-space: normal;
+            filter: alpha(opacity=0);
+            opacity: 0;
+
+            line-break: auto;
+        }
+        .tooltip.in {
+            filter: alpha(opacity=90);
+            opacity: .9;
+        }
+        .tooltip.top {
+            padding: 5px 0;
+            margin-top: -3px;
+        }
+        .tooltip.right {
+            padding: 0 5px;
+            margin-left: 3px;
+        }
+        .tooltip.bottom {
+            padding: 5px 0;
+            margin-top: 3px;
+        }
+        .tooltip.left {
+            padding: 0 5px;
+            margin-left: -3px;
+        }
+        .tooltip-inner {
+            max-width: 200px;
+            padding: 3px 8px;
+            color: #fff;
+            text-align: center;
+            background-color: #000;
+            border-radius: 4px;
+        }
+        .tooltip-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+        }
+        .tooltip.top .tooltip-arrow {
+            bottom: 0;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px 5px 0;
+            border-top-color: #000;
+        }
+        .tooltip.top-left .tooltip-arrow {
+            right: 5px;
+            bottom: 0;
+            margin-bottom: -5px;
+            border-width: 5px 5px 0;
+            border-top-color: #000;
+        }
+        .tooltip.top-right .tooltip-arrow {
+            bottom: 0;
+            left: 5px;
+            margin-bottom: -5px;
+            border-width: 5px 5px 0;
+            border-top-color: #000;
+        }
+        button{
+            background-color: transparent;
+            border: 0px;
+            font-size: 7px;
+            padding-right: 0;
+            padding-left: 0;
+        }
     </style>
 
 
@@ -111,7 +199,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
     <script>
-
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
         });
@@ -145,7 +232,7 @@
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
 
-            var text = "Succinilcolina <span class='dosis'>"+dosis+"</span> : No en hiperK, ni antec de";
+            var text = "Succinilcolina <span class='dosis'>"+dosis+"</span> : No en hiperkalemia, ni antec de";
             return text;
         }
         function rocuronio() {
@@ -198,7 +285,7 @@
                 dosis = "1,5 - 2 mg/kg";
             else
                 dosis = Math.round(lower*peso) +" - "+Math.round(upper*peso)+" "+unit;
-            var text = "Ketamina <span class='dosis'>"+dosis+"</span> : En hipotensión, En estatus asmático, No en HIC";
+            var text = "Ketamina <span class='dosis'>"+dosis+"</span> : En hipotensión, En estatus asmático, No en <button type='button' data-toggle='tooltip' data-placement='top' title='Hipertensión Intracraneana'>HIC</button>";
             return text;
         }
         function lidocaina() {
@@ -211,7 +298,7 @@
                 dosis = "1,5 mg/kg";
             else
                 dosis = Math.round(lower*peso) +" "+unit;
-            var text = "Lidocaina: <span class='dosis'>"+dosis+"</span> : En HIC y obstrucción bronquial";
+            var text = "Lidocaina: <span class='dosis'>"+dosis+"</span> : En <button type='button' data-toggle='tooltip' data-placement='top' title='Hipertensión Intracraneana'>HIC</button> y obstrucción bronquial";
             return text;
         }
         function etomidato() {
@@ -237,7 +324,7 @@
             $("#ketamina").html(ketamina());
             $("#sucinilcolina").html(sucinilcolina());
             $("#rocuronio").html(rocuronio());
-        })
+        });
         $("#fentanyl").html(fentanyl());
         $("#lidocaina").html(lidocaina());
         $("#midazolam").html(midazolam());
