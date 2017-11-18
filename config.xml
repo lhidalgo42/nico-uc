@@ -16,6 +16,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="orientation" value="default" />
     <preference name="fullscreen" value="true" />
+    <preference name="SplashScreen" value="none" />
     <platform name="android">
         <allow-intent href="market:*" />
         <icon density="ldpi" src="www/res/icon/android/ldpi.png" />
