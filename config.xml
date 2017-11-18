@@ -23,8 +23,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="orientation" value="default" />
     <preference name="fullscreen" value="true" />
-    <preference name="SplashScreenDelay" value="0"/>
-    <preference name="FadeSplashScreenDuration" value="0"/>
+
     <icon src="www/img/icon.png" />
     <platform name="android">
         <allow-intent href="market:*" />
