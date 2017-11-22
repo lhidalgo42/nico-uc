@@ -33,7 +33,7 @@
         <splash density="port-xhdpi" src="res/screens/android/splash-port-xhdpi.png"/>
         <splash density="port-xxhdpi" src="res/screens/android/splash-port-xxhdpi.png"/>
         <splash density="port-xxxhdpi" src="res/screens/android/splash-port-xxxhdpi.png"/>
-        <allow-intent href="market:*" />
+        <allow-intent href="market:*" />gi
     </platform>
     <platform name="ios">
         <icon src="res/icons/ios/icon-1024.png" width="1024" height="1024"/>
