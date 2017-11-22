@@ -18,10 +18,7 @@
     $(document).ready(function () {
         var last = ["/home.html"];
         window.sessionStorage.setItem('last', JSON.stringify(last));
-        if (window.sessionStorage.getItem("login") == null)
-            window.location.href = "intro.html";
-        else
-            window.location.href = "home.html";
+        window.location.href = "home.html";
     });
 </script>
 </body>
