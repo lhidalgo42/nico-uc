@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=yes"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        label {
+            font-size: 25px;
+        }
+
+        option {
+            position: absolute;
+            left: 30%;
+        }
+
+        option:checked {
+            position: absolute;
+            left: 30%;
+        }
+
+        select {
+            position: absolute;
+            left: 60%;
+        }
+
+        label {
+            position: absolute;
+            left: 10%;
+        }
+
+        input {
+            position: absolute;
+            left: 60%;
+        }
+
+        label, span {
+            font-family: Arial;
+        }
+
+        .table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+            padding: 1px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr > td:first-child {
+            text-align: left;
+        }
+
+        .table {
+            margin-left: 5%;
+            width: 90%;
+        }
+    </style>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/javascript.js"></script>
+
+</head>
+<body>
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/Base%20calculadora.jpg">
+        <div class="home" style="display: block">
+            <label for="creatinina" style="top: 15%;">Creatinina (mg/dl)</label>
+            <input min="0" step="0.01" type="number" name="creatinina" id="creatinina"
+                   style="top: 16%;width: 25%;height: 30px;font-size:22px;">
+            <label for="edad" style="top: 25%;">Edad (Años)</label>
+            <input min="1" max="130" step="1" type="number" name="edad" id="edad"
+                   style="top: 26%;width: 25%;height: 30px;font-size:22px;">
+            <label for="peso" style="top: 35%;">Peso (Kg)</label>
+            <small style="position: absolute;top: 41%;left: 10%">Solo para Cockcroft-Gault</small>
+            <input min="1" max="300" step="1" type="number" name="peso" id="peso"
+                   style="top: 36%;width: 25%;height: 30px;font-size:22px;">
+            <label for="peso" style="top: 45%;">Sexo</label>
+            <div class="btn-group" data-toggle="buttons"
+                 style="top: 46%;height: 30px;font-size: 22px;position: absolute;left: 57%">
+                <label class="btn btn-default">
+                    <input type="radio" name="sexo" id="option2" autocomplete="off" value="1"> Hombre
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="sexo" id="option3" autocomplete="off" value="0.85"> Mujer
+                </label>
+            </div>
+            <label for="raza" style="top: 55%;">Raza</label>
+            <small style="position: absolute;top: 61%;left: 10%">Solo para CKD-EPI</small>
+            <div id="raza" class="btn-group" data-toggle="buttons"
+                 style="top: 56%;height: 30px;font-size: 22px;position: absolute;left: 57%">
+                <label class="btn btn-default">
+                    <input type="radio" name="raza" id="option4" autocomplete="off" value="1.159"> AfroAmericana
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="raza" id="option5" autocomplete="off" value="1"> Otra
+                </label>
+            </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 70%;">
+                <span id="resultado1" style="font-size: 26px;"></span>
+                <br>
+                <span id="resultado2" style="font-size: 26px;"></span>
+            </div>
+
+            <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
+            <a href="antibioticos.html" style="width: 13.3%;height: 8%;left: 42.7%;top: 91%;"> </a>
+            <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
+        </div>
+    </div>
+</div>
+<script>
+    function cal1() {
+        let creatinina = (isNaN(parseFloat($("#creatinina").val()))) ? 0 : parseFloat($("#creatinina").val());
+        let edad = (isNaN(parseInt($("#edad").val()))) ? 0 : parseInt($("#edad").val());
+        let peso = (isNaN(parseInt($("#peso").val()))) ? 0 : parseInt($("#peso").val())
+        let sexo = (isNaN(parseFloat($('input[name=sexo]:checked').val()))) ? 1 : parseFloat($('input[name=sexo]:checked').val());
+        let raza = parseInt($('input[name=raza]:checked').val());
+        let res1 = (((140 - edad) * peso * sexo) / (72 * creatinina));
+        res1 = Math.round(res1);
+        window.sessionStorage.setItem('renal', res1);
+        $("#resultado1").html("Cockcroft-Gault (Clearance): <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" +res1+ "</span> ml/min");
+    }
+
+    function cal2(){
+        let creatinina = (isNaN(parseFloat($("#creatinina").val()))) ? 0 : parseFloat($("#creatinina").val());
+        let edad = (isNaN(parseInt($("#edad").val()))) ? 0 : parseInt($("#edad").val());
+        let peso = (isNaN(parseInt($("#peso").val()))) ? 0 : parseInt($("#peso").val())
+        let sexo = (isNaN(parseFloat($('input[name=sexo]:checked').val()))) ? 1 : parseFloat($('input[name=sexo]:checked').val());
+        let raza = (isNaN(parseFloat($('input[name=raza]:checked').val()))) ? 1 : parseFloat($('input[name=raza]:checked').val());
+
+        let res2 = 141;
+        let k = 0;
+        let a =0;
+        let b = 0;
+        let c = 0;
+        let d = 0;
+        let e = 1;
+
+        if(sexo === 1) {
+            k = 0.9;
+            a = -0.411;
+        }
+        else {
+            k = 0.7;
+            a = -0.329;
+            e = 1.018;
+        }
+        b = creatinina/k;
+        if(b <= 1) {
+            c = Math.pow(b,a);
+            d = 1;
+        }
+        else{
+            c = 1;
+            d = Math.pow(b,-1.209);
+        }
+        let f = Math.pow(0.993,edad);
+        //console.log(a +"a - "+b+"b - "+c+"c - "+d+"d - "+e+"e - "+f+"f - "+k+"k");
+        //console.log(creatinina+" - "+edad+" - "+sexo+" - "+raza);
+
+        res2 = res2*c*d*e*f*raza;
+        res2 = Math.round(res2);
+        $("#resultado2").html("CKD-EPI (TGF): <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" +res2+ "</span> ml/min/1,73m2");
+
+
+
+
+    }
+
+    $("#creatinina").keyup(function () {
+        cal1();
+        cal2();
+    });
+    $("#edad").keyup(function () {
+        cal1();
+        cal2();
+    });
+    $("#peso").keyup(function () {
+        cal1();
+        cal2();
+    });
+    $("input[type='radio']").change(function () {
+        cal1();
+        cal2();
+    });
+
+
+</script>
+</body>
+</html>

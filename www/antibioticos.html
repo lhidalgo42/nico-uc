@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=yes"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Pag 16</title>
+
+    <!-- Bootstrap -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/javascript.js"></script>
+    <style>
+        #light1 {
+
+            position: absolute;
+            width: 19.3%;
+            height: 78%;
+            left: 16.7%;
+            top: 13%;
+            background-color: yellow;
+            opacity: 0.4
+        }
+
+        #light2 {
+            position: absolute;
+            width: 19.3%;
+            height: 78%;
+            left: 36%;
+            top: 13%;
+            background-color: yellow;
+            opacity: 0.4
+        }
+
+        #light3 {
+            position: absolute;
+            width: 19.3%;
+            height: 78%;
+            left: 55%;
+            top: 13%;
+            background-color: yellow;
+            opacity: 0.4
+        }
+    </style>
+</head>
+<body>
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/Antibioticos.jpg">
+        <div class="home" style="display: block">
+            <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91%;"> </a>
+            <a href="#" style="width: 13.3%;height: 7.5%;left: 66.2%;top: 91%;" id="back"> </a>
+        </div>
+        <div id="light1" style="display: none"></div>
+        <div id="light2" style="display:none;"></div>
+        <div id="light3" style="display: none"></div>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.session.js"></script>
+<script src="js/javascript.js"></script>
+<script>
+    $(document).ready(function () {
+        let renal = window.sessionStorage.getItem('renal')
+        if (renal <= 90 && renal >= 50) {
+            $("#light1").css('display','block')
+        }
+        else if (renal < 50 && renal >= 10) {
+            $("#light2").css('display','block')
+        }
+        else if (renal < 10) {
+            $("#light3").css('display','block')
+        }
+    });
+</script>
+
+</body>
+</html>
