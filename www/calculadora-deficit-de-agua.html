@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=yes"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        label {
+            font-size: 25px;
+        }
+
+        option {
+            position: absolute;
+            left: 30%;
+        }
+
+        option:checked {
+            position: absolute;
+            left: 30%;
+        }
+
+        select {
+            position: absolute;
+            left: 60%;
+        }
+
+        label {
+            position: absolute;
+            left: 10%;
+        }
+
+        input {
+            position: absolute;
+            left: 70%;
+        }
+
+        label, span {
+            font-family: Arial;
+        }
+
+        .table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+            padding: 1px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr > td:first-child {
+            text-align: left;
+        }
+
+        .table {
+            margin-left: 5%;
+            width: 90%;
+        }
+    </style>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/javascript.js"></script>
+
+</head>
+<body>
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/Base%20calculadora.jpg">
+        <div class="home" style="display: block">
+            <label for="nam" style="top: 15%;">Na Medido </label>
+            <label for="nam" style="top: 19%;"><small>(meq/lt)</small></label>
+            <input type="number" name="nam" id="nam" style="top: 16%;width: 25%;height: 30px;font-size:22px;">
+            <label for="nao" style="top: 25%;">Na Objetivo </label>
+            <label for="nao" style="top: 29%;"><small>(meq/lt)</small></label>
+            <input type="number" name="nao" id="nao" style="top: 26%;width: 25%;height: 30px;font-size:22px;">
+            <label for="edad" style="top: 35%;">Edad <small>(Años)</small></label>
+            <input min="1" max="130" step="1" type="number" name="edad" id="edad"
+                   style="top: 36%;width: 25%;height: 30px;font-size:22px;">
+            <label for="peso" style="top: 45%;">Peso <small>(Kg)</small></label>
+            <input min="1" max="300" step="1" type="number" name="peso" id="peso"
+                   style="top: 46%;width: 25%;height: 30px;font-size:22px;">
+            <label for="peso" style="top: 55%;">Sexo</label>
+            <div class="btn-group" data-toggle="buttons"
+                 style="top: 56%;height: 30px;font-size: 22px;position: absolute;left: 64%">
+                <label class="btn btn-default active">
+                    <input type="radio" name="sexo" id="option2" autocomplete="off" value="hombre" checked> Hombre
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="sexo" id="option3" autocomplete="off" value="mujer"> Mujer
+                </label>
+            </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 70%;">
+                <span id="resultado1" style="font-size: 22px;"></span>
+                <br>
+                <span id="resultado2" style="font-size: 18px;">Considere agregar pérdidas insensibles</span>
+            </div>
+
+            <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
+            <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
+        </div>
+    </div>
+</div>
+<script>
+    function cal1() {
+        let nam = (isNaN(parseFloat($("#nam").val()))) ? 1 : parseFloat($("#nam").val());
+        let nao = (isNaN(parseFloat($("#nao").val()))) ? 0 : parseFloat($("#nao").val());
+        let edad = (isNaN(parseInt($("#edad").val()))) ? 0 : parseInt($("#edad").val());
+        let peso = (isNaN(parseInt($("#peso").val()))) ? 0 : parseInt($("#peso").val())
+        let sexo = $('input[name=sexo]:checked').val();
+
+        let res1;
+        let mul;
+        if(sexo === "hombre"){
+            if(edad <=64)
+                mul = 0.6;
+            else
+                mul = 0.5;
+        }
+        else{
+            if(edad <=64)
+                mul = 0.5;
+            else
+                mul = 0.45;
+        }
+        let agua_total = peso*mul;
+
+        res1 = agua_total*(1-nao/nam);
+        res1 = Math.round(res1*1000);
+        $("#resultado1").html("Déficit de Agua Libre: <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + res1 + "</span> mL");
+    }
+
+
+    $("#nam").keyup(function () {
+        cal1();
+    });
+    $("#nao").keyup(function () {
+        cal1();
+    });
+    $("#edad").keyup(function () {
+        cal1();
+    });
+    $("#peso").keyup(function () {
+        cal1();
+    });
+    $("input[type='radio']").change(function () {
+        cal1();
+    });
+    cal1();
+
+
+</script>
+</body>
+</html>

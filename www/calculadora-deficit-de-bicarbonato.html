@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=yes"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        label {
+            font-size: 25px;
+        }
+
+        option {
+            position: absolute;
+            left: 30%;
+        }
+
+        option:checked {
+            position: absolute;
+            left: 30%;
+        }
+
+        select {
+            position: absolute;
+            left: 60%;
+        }
+
+        label {
+            position: absolute;
+            left: 10%;
+        }
+
+        input {
+            position: absolute;
+            left: 60%;
+        }
+
+        label, span {
+            font-family: Arial;
+        }
+
+        .table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+            padding: 1px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr > td:first-child {
+            text-align: left;
+        }
+
+        .table {
+            margin-left: 5%;
+            width: 90%;
+        }
+    </style>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/javascript.js"></script>
+
+</head>
+<body>
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/Base%20calculadora.jpg">
+        <div class="home" style="display: block">
+            <label for="peso" style="top: 15%;">Peso (kg)</label>
+            <input min="0" step="0.01" type="number" name="peso" id="peso"
+                   style="top: 16%;width: 25%;height: 30px;font-size:22px;">
+            <label for="bicarbonato" style="top: 25%;">HCO<small>3</small> Paciente</label>
+            <label for="bicarbonato" style="top: 29%;">(meq/lt)</label>
+            <input min="1" max="130" step="1" type="number" name="bicarbonato" id="bicarbonato"
+                   style="top: 26%;width: 25%;height: 30px;font-size:22px;">
+            <div style="width: 100%;position: absolute;text-align: center;top: 50%;">
+                <span id="resultado1" style="font-size: 26px;"></span>
+            </div>
+
+            <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
+            <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
+        </div>
+    </div>
+</div>
+<script>
+    function cal1() {
+        let peso = (isNaN(parseFloat($("#peso").val()))) ? 0 : parseFloat($("#peso").val());
+        let bicarbonato = (isNaN(parseFloat($("#bicarbonato").val()))) ? 1 : parseFloat($("#bicarbonato").val());
+
+        let res1 = peso * (0.4 + 2.6 / bicarbonato) * (15 - bicarbonato);
+        res1 = Math.round(res1);
+        $("#resultado1").html("Déficit de HCO3: <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + res1 + "</span> meq/lt");
+    }
+
+
+    $("#peso").keyup(function () {
+        cal1();
+    });
+    $("#bicarbonato").keyup(function () {
+        cal1();
+    });
+    cal1();
+
+
+</script>
+</body>
+</html>

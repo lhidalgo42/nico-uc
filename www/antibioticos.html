@@ -15,34 +15,33 @@
     <script src="js/javascript.js"></script>
     <style>
         #light1 {
-
             position: absolute;
-            width: 19.3%;
-            height: 78%;
-            left: 16.7%;
-            top: 13%;
+            width: 18.3%;
+            height: 77%;
+            left: 17.7%;
+            top: 13.5%;
             background-color: yellow;
-            opacity: 0.4
+            opacity: 0.3;
         }
 
         #light2 {
             position: absolute;
             width: 19.3%;
-            height: 78%;
+            height: 77%;
             left: 36%;
-            top: 13%;
+            top: 13.5%;
             background-color: yellow;
-            opacity: 0.4
+            opacity: 0.3
         }
 
         #light3 {
             position: absolute;
-            width: 19.3%;
-            height: 78%;
+            width: 45.3%;
+            height: 77%;
             left: 55%;
-            top: 13%;
+            top: 13.5%;
             background-color: yellow;
-            opacity: 0.4
+            opacity: 0.3
         }
     </style>
 </head>
@@ -52,7 +51,7 @@
         <img src="img/slides/Antibioticos.jpg">
         <div class="home" style="display: block">
             <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91%;"> </a>
-            <a href="#" style="width: 13.3%;height: 7.5%;left: 66.2%;top: 91%;" id="back"> </a>
+            <a href="calculadora-renal.html" style="width: 13.3%;height: 7.5%;left: 66.2%;top: 91%;"> </a>
         </div>
         <div id="light1" style="display: none"></div>
         <div id="light2" style="display:none;"></div>
@@ -66,7 +65,7 @@
 <script>
     $(document).ready(function () {
         let renal = window.sessionStorage.getItem('renal')
-        if (renal <= 90 && renal >= 50) {
+        if (renal >= 50) {
             $("#light1").css('display','block')
         }
         else if (renal < 50 && renal >= 10) {

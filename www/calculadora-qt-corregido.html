@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=yes"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        label {
+            font-size: 25px;
+        }
+
+        option {
+            position: absolute;
+            left: 30%;
+        }
+
+        option:checked {
+            position: absolute;
+            left: 30%;
+        }
+
+        select {
+            position: absolute;
+            left: 60%;
+        }
+
+        label {
+            position: absolute;
+            left: 10%;
+        }
+
+        input {
+            position: absolute;
+            left: 70%;
+        }
+
+        label, span {
+            font-family: Arial;
+        }
+
+        .table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+            padding: 1px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        tr > td:first-child {
+            text-align: left;
+        }
+
+        .table {
+            margin-left: 5%;
+            width: 90%;
+        }
+    </style>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/javascript.js"></script>
+
+</head>
+<body>
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/Base%20calculadora.jpg">
+        <div class="home" style="display: block">
+            <div style="position: absolute;text-align: center;width: 100%;top: 15%">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default">
+                        <input type="radio" name="time" id="option1" autocomplete="off" value="mseg"> mseg
+                    </label>
+                    <label class="btn btn-default active">
+                        <input type="radio" name="time" id="option2" autocomplete="off" value="seg" checked> seg
+                    </label>
+                </div>
+            </div>
+            <label for="qt" style="top: 25%;">Intervalo QT <span class="un"></span></label>
+            <input type="number" name="qt" id="qt"
+                   style="top: 26%;width: 25%;height: 30px;font-size:22px;">
+            <label for="rr" style="top: 35%;">Intervalo RR <span class="un"></span></label>
+            <input type="number" name="rr" id="rr"
+                   style="top: 36%;width: 25%;height: 30px;font-size:22px;">
+            <div style="width: 100%;position: absolute;text-align: center;top: 45%;">
+                <span>Con ECG a 25 mm/seg, 1 cuadro pequeño = 0,04 seg</span>
+            </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 60%;">
+                <span id="resultado1" style="font-size: 26px;"></span>
+                <br>
+                <span id="resultado2" style="font-size: 26px;"></span>
+            </div>
+
+            <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
+            <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
+        </div>
+    </div>
+</div>
+<script>
+    function cal1() {
+        let qt = (isNaN(parseFloat($("#qt").val()))) ? 0 : parseFloat($("#qt").val());
+        let rr = (isNaN(parseFloat($("#rr").val()))) ? 1 : parseFloat($("#rr").val());
+        let un = $('input[name="time"]:checked').val();
+
+        let res1;
+        if (un === "seg") {
+            res1 = qt / Math.sqrt(rr);
+            res1 = Math.round(res1 * 1000) / 1000;
+        }
+        else{
+            res1 = (qt/1000)/Math.sqrt(rr/1000);
+            res1 = Math.round(res1*1000);
+        }
+        $(".un").html("("+un+")");
+        $("#resultado1").html("QTc (Bazett): <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" +res1+ "</span> "+un);
+    }
+    cal1();
+    cal2();
+    function cal2(){
+        let qt = (isNaN(parseFloat($("#qt").val()))) ? 0 : parseFloat($("#qt").val());
+        let rr = (isNaN(parseFloat($("#rr").val()))) ? 1 : parseFloat($("#rr").val());
+        let un = $('input[name="time"]:checked').val();
+
+        let res2;
+        if (un === "seg") {
+            res2 = qt / Math.pow(rr,1/3);
+            res2 = Math.round(res2 * 1000) / 1000;
+        }
+        else{
+            res2 = (qt/1000)/Math.pow(rr/1000,1/3);
+            res2 = Math.round(res2*1000);
+        }
+        $("#resultado2").html("QTc (Fridericia): <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" +res2+ "</span> "+un);
+
+
+
+
+    }
+
+    $("#qt").keyup(function () {
+        cal1();
+        cal2();
+    });
+    $("#rr").keyup(function () {
+        cal1();
+        cal2();
+    });
+    $("input[type='radio']").change(function () {
+        cal1();
+        cal2();
+    });
+
+
+</script>
+</body>
+</html>
