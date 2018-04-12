@@ -101,11 +101,11 @@
             <label style="top: 35%;">Diálisis ≥ 2 sem</label>
             <div class="btn-group" data-toggle="buttons"
                  style="top: 36%;height: 20px;font-size: 15px;position: absolute;left: 68%">
-                <label class="btn btn-default active" style="padding: 0 11px;">
-                    <input type="radio" name="dialisis" id="option2" autocomplete="off" value="si" checked> SI
-                </label>
                 <label class="btn btn-default" style="padding: 0 11px;">
-                    <input type="radio" name="dialisis" id="option3" autocomplete="off" value="no"> NO
+                    <input type="radio" name="dialisis" value="si"> SI
+                </label>
+                <label class="btn btn-default active" style="padding: 0 11px;">
+                    <input type="radio" name="dialisis" value="no" checked> NO
                 </label>
             </div>
             <label for="ascitis" style="top: 40%;">Ascitis</label>
@@ -126,6 +126,18 @@
             <div style="width: 100%;position: absolute;text-align: center;top: 58%">
                 <span id="resultado2" style="font-size: 15px;"></span>
             </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 63%">
+                <span id="resultado3" style="font-size: 26px;"></span>
+            </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 69%">
+                <span id="resultado4" style="font-size: 15px;"></span>
+            </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 74%">
+                <span id="resultado5" style="font-size: 26px;"></span>
+            </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 80%">
+                <span id="resultado6" style="font-size: 15px;"></span>
+            </div>
 
             <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
             <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
@@ -142,79 +154,178 @@
         let res1;
         let pts = 0;
 
-        if(bilirrubina < 2)
-            pts = pts+1;
-        else if (bilirrubina >=2 && bilirrubina <=3)
-            pts = pts+2;
+        if (bilirrubina < 2)
+            pts = pts + 1;
+        else if (bilirrubina >= 2 && bilirrubina <= 3)
+            pts = pts + 2;
         else
-            pts = pts+3;
+            pts = pts + 3;
 
-        if(albumina > 3.5)
-            pts = pts+1;
-        else if(albumina >=2.8 && albumina <= 3.5)
-            pts = pts+2;
+        if (albumina > 3.5)
+            pts = pts + 1;
+        else if (albumina >= 2.8 && albumina <= 3.5)
+            pts = pts + 2;
         else
-            pts = pts+3;
+            pts = pts + 3;
 
-        if(inr < 1.7)
-            pts = pts+1;
-        else if(inr >=1.7 && inr <=2.2)
-            pts = pts+2;
+        if (inr < 1.7)
+            pts = pts + 1;
+        else if (inr >= 1.7 && inr <= 2.2)
+            pts = pts + 2;
         else
-            pts = pts+3;
+            pts = pts + 3;
 
-        if(ascitis === "ausente")
-            pts = pts+1;
-        else if(ascitis === "leve-mod")
-            pts = pts+2;
+        if (ascitis === "ausente")
+            pts = pts + 1;
+        else if (ascitis === "leve-mod")
+            pts = pts + 2;
         else
-            pts=pts+3;
+            pts = pts + 3;
 
-        if(encefalopatia === "ausente")
-            pts = pts+1;
-        else if(ascitis === "grado-1-2")
-            pts = pts+2;
+        if (encefalopatia === "ausente")
+            pts = pts + 1;
+        else if (ascitis === "grado-1-2")
+            pts = pts + 2;
         else
-            pts=pts+3;
+            pts = pts + 3;
 
         let grado;
 
-        if (pts>=5 && pts<=6)
+        if (pts >= 5 && pts <= 6)
             grado = "A";
-        else if(pts >=7 && pts<=9)
+        else if (pts >= 7 && pts <= 9)
             grado = "B";
         else
             grado = "C";
 
         let text;
-        $("#resultado1").html("Child-Pugh: <span style='color: darkred;font-weight: bold;font-size: 30px'>" + grado+ "</span> <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + pts+ "</span>");
-        if(grado === "A")
+        $("#resultado1").html("Child-Pugh: <span style='color: darkred;font-weight: bold;font-size: 30px'>" + grado + "</span> <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + pts + "</span>");
+        if (grado === "A")
             text = "1 año = 100%; 2 años = 85% ";
-        else if(grado === "B")
+        else if (grado === "B")
             text = "1 año = 80%; 2 años = 60% ";
         else
             text = "1 año = 45%; 2 años = 35% ";
-        $("#resultado2").html("Supervivencia: "+text);
+        $("#resultado2").html("Supervivencia: " + text);
     }
 
 
     $("#bilirrubina").keyup(function () {
         cal1();
+        cal2();
+    });
+    $("#creatinina").keyup(function () {
+        cal1();
+        cal2();
     });
     $("#albumina").keyup(function () {
         cal1();
+        cal2();
     });
     $("#inr").keyup(function () {
         cal1();
+        cal2();
+    });
+    $("#na").keyup(function () {
+        cal1();
+        cal2();
     });
     $("input[type='radio']").change(function () {
         cal1();
+        cal2();
     });
 
     $("select").change(function () {
         cal1();
+        cal2();
     });
 
+    function log(i) {
+        return Math.log(i) * Math.LOG10E;
+    }
+
+    function ln(i) {
+        return Math.log(i);
+    }
+
+    function sq(i) {
+        return i * i;
+    }
+
+    function sqr(i) {
+        return Math.sqrt(i);
+    }
+
+
+    function power(x, y) {
+        return Math.pow(x, y);
+    }
+
+    function eTo(x) {
+        return Math.exp(x);
+    }
+
+    function fixDP(r, dps) {
+        if (isNaN(r)) return "NaN";
+        var msign = '';
+        if (r < 0) msign = '-';
+        x = Math.abs(r);
+        if (x > Math.pow(10, 21)) return msign + x.toString();
+        var m = Math.round(x * Math.pow(10, dps)).toString();
+        if (dps == 0) return msign + m;
+        while (m.length <= dps) m = "0" + m;
+        return msign + m.substring(0, m.length - dps) + "." + m.substring(m.length - dps);
+    }
+
+    function cal2() {
+        let dialisis = $('input[name=dialisis]:checked').val();
+        if (dialisis === "si")
+            $("#creatinina").val(4).attr('disabled', 'disabled');
+        else
+            $("#creatinina").removeAttr('disabled');
+
+        let bilirrubina = (isNaN(parseFloat($("#bilirrubina").val()))) ? 0 : parseFloat($("#bilirrubina").val());
+        let creatinina = (isNaN(parseFloat($("#creatinina").val()))) ? 0 : parseFloat($("#creatinina").val());
+        let albumina = (isNaN(parseFloat($("#albumina").val()))) ? 0 : parseFloat($("#albumina").val());
+        let inr = (isNaN(parseFloat($("#inr").val()))) ? 0 : parseFloat($("#inr").val());
+        let na = (isNaN(parseFloat($("#na").val()))) ? 0 : parseFloat($("#na").val());
+        let ascitis = $("#ascitis").val();
+        let encefalopatia = $("#encefalopatia").val();
+        if (creatinina > 4)
+            creatinina = 4;
+
+        if (na < 125)
+            na = 125;
+        if (na > 140)
+            na = 140;
+
+        let meld = 10 * ((0.957 * ln(creatinina)) + (0.378 * ln(bilirrubina)) + (1.12 * ln(inr))) + 6.43;
+        meld = Math.round(meld);
+        let meld_na = meld - na - (0.025 * meld * (140 - na)) + 140;
+        meld_na = Math.round(meld_na);
+        if (meld === -Infinity) {
+            meld = '';
+            meld_na = '';
+        }
+        $("#resultado3").html("MELD : <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + meld + "</span>");
+
+        $("#resultado5").html("MELD Na : <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + meld_na + "</span>");
+
+
+        let text = '';
+        if (meld <= 9)
+            text = "Mortalidad a 3 Meses = 1.9%";
+        else if (meld >= 10 && meld <= 19)
+            text = "Mortalidad a 3 Meses = 6%";
+        else if (meld >= 20 && meld <= 29)
+            text = "Mortalidad a 3 Meses = 19.6%";
+        else if (meld >= 30 && meld <= 39)
+            text = "Mortalidad a 3 Meses = 52.6%";
+        else
+            text = "Mortalidad a 3 Meses = 71.3%";
+        $("#resultado4").html(text);
+
+    }
 </script>
 </body>
 </html>

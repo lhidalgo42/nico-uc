@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=yes"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <style>
+        label {
+            font-size: 25px;
+        }
+
+        option {
+            position: absolute;
+            left: 30%;
+        }
+
+        option:checked {
+            position: absolute;
+            left: 30%;
+        }
+
+        select {
+            position: absolute;
+            left: 60%;
+        }
+
+        label {
+            position: absolute;
+            left: 10%;
+        }
+
+        input {
+            width: 40px
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        label, span {
+            font-family: Arial;
+        }
+
+        .table-condensed > tbody > tr > td, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > td, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > thead > tr > th {
+            padding: 1px;
+        }
+
+        td {
+            /*text-align: center;*/
+            font-size: 18px;
+        }
+
+        tr > td:first-child {
+            text-align: left;
+        }
+
+        .table {
+            margin-left: 5%;
+            width: 90%;
+        }
+
+        .link {
+            position: relative;
+            background-color: transparent;
+            opacity: 1;
+        }
+    </style>
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/javascript.js"></script>
+
+</head>
+<body>
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/Base%20calculadora.jpg">
+        <div class="home" style="display: block">
+            <div style="position: absolute; top: 10%;left: 0;width: 100%;text-align: center">
+                <span style="font-size: 18px;">1º medida: Inicie SF 0,9% 1- 2 lt a 1000 cc/hr</span>
+                <table class="table table-condensed table-bordered">
+                    <tr>
+                        <td style="width: 200px">Fuidos <br> Na(meq/L) : <input type="number" id="na"><br>Control cada 3
+                            hrs
+                        </td>
+                        <td id="td-na"></td>
+                    </tr>
+                    <tr>
+                        <td>K (meq/L) : <input type="number" id="k"><br>P (mg/dl) : <input type="number" id="p"></td>
+                        <td id="td-k-p"></td>
+                    </tr>
+                    <tr>
+                        <td>PH : <input type="number" id="ph"></td>
+                        <td id="td-ph"></td>
+                    </tr>
+                    <tr>
+                        <td>Insulina <br>1º HGT (mg/dl) : <input type="number" id="hgt1"><br>o Glicemia <br><br>Con BIC
+                            Iniciada <br>HGT Previo : <input type="number" id="hgtp"><br>HGT Actual : <input
+                                    type="number" id="hgta"></td>
+                        <td id="td-insulina"></td>
+                    </tr>
+                </table>
+            </div>
+            <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
+            <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
+        </div>
+    </div>
+    <script>
+        function ph() {
+            let ph = parseFloat($("#ph").val());
+            if (!isNaN(ph)) {
+                if (ph < 6.9)
+                    $("#td-ph").html('<a href="infusion-bicarbonato.html" class="link">Inicie Bicarbonato EV (ir)</a>')
+                else
+                    $("#td-ph").html('');
+            }
+        }
+        function kp() {
+
+            let k = parseFloat($("#k").val());
+            let p = (isNaN(parseFloat($("#p").val()))) ? 2 : parseFloat($("#p").val());
+            if (!isNaN(k)) {
+                if (k < 3.3 && p > 1)
+                    $("#td-k-p").html("Cargar con 2-3 Amp KCL 10% (amp = 13 meq) por hr, hasta k > 3.3");
+                else if (k < 3.3 && p < 1)
+                    $("#td-k-p").html("Cargar con 2-3 Amp Monofosfato de P (amp = 11 meq) por hr, hasta k > 3.3");
+                else if(k >3.3 && k <=5.2 && p >1)
+                    $("#td-k-p").html("Aportar 2º SS 0.45% con 4 amp de KCL x Litro a 100-150 ml/hr");
+                else if(k>3.3 && k <=5.2 && p<1)
+                    $("#td-k-p").html("Aportar 2º SS 0.45% con 5 amp de Monofosfato de P x Litro a 100-150 ml/hr");
+                else if(k>5.2)
+                    $("#td-k-p").html("No dar Potasio y chequée cada 2 hrs");
+                else
+                    $("#td-k-p").html('');
+            }
+
+        }
+        function na(){
+            let na  = parseFloat($("#na").val());
+            let hgt1 = parseFloat($("#hgt1").val());
+            let hgta = parseFloat($("#hgta").val());
+            let hgtp = parseFloat($("#hgtp").val());
+            let hgt;
+            let hgt2;
+            if(!isNaN(hgta))
+                hgt = hgta;
+            else
+                hgt = hgt1;
+
+            if(!isNaN(hgta))
+                hgt2 = hgta;
+            else
+                hgt2 = hgtp;
+            console.log(hgt2);
+
+            let nac = na + 0.024*(hgt - 100);
+            nac = Math.round(nac);
+            if(hgt2 < 200)
+                $("#td-na").html('<strong>Cambie por SG 5% + 2 gr de NaCl c/ 500 cc a 100 ml</strong>').css('background-color','yellow');
+            else if(nac >=135)
+                $("#td-na").html('(Na Corregido: '+nac+') SS 0.45% a 250-500 ml/hr, según hidratación').css('background-color','white');
+            else if(nac <135)
+                $("#td-na").html('(Na Corregido: '+nac+') SS 0.9% a 250-500 ml/hr, según hidratación').css('background-color','white');
+            else
+                $("#td-na").html('').css('background-color','white');
+
+        }
+        function insulina() {
+            let k = $("#k").val();
+            let hgt1 = parseFloat($("#hgt1").val());
+            let hgta = parseFloat($("#hgta").val());
+            let hgtp = parseFloat($("#hgtp").val());
+            let delta;
+
+            if (k < 3.3)
+                $("#td-insulina").html("No dar Insulina");
+            else if (k >= 3.3) {
+                $("#td-insulina").html("Bolo de Insulina EV 0.1 U/kg + Inicio de BIC de Insulina 100/100cc SF a 0.1 U/kg/hr");
+
+                if (hgta > 200) {
+                    delta = (hgta - hgtp);
+                    if (delta > 0) { // aumenta
+                        if (delta >= 150)
+                            $("#td-insulina").html('Aumente BIC 3 ml/hr');
+                        else if (delta < 150 && delta >= 100)
+                            $("#td-insulina").html('Aumente BIC 2.5 ml/hr');
+                        else if (delta < 100 && delta >= 50)
+                            $("#td-insulina").html('Aumente BIC 2 ml/hr');
+                        else if (delta < 50 && delta >= 1)
+                            $("#td-insulina").html('Aumente BIC 1.5 ml/hr');
+                        else
+                            $("#td-insulina").html('CASO Extrano');
+                    }
+                    else {
+                        delta = -delta;
+                        if (delta >= 0 && delta < 50)
+                            $("#td-insulina").html('Aumente BIC 1 ml/hr');
+                        else if (delta >= 50 && delta <= 75)
+                            $("#td-insulina").html('Mantener Infusión');
+                        else if (delta >= 76 && delta <= 100)
+                            $("#td-insulina").html('Disminuya BIC 1.5 ml/hr');
+                        else if (delta >= 101 && delta <= 125)
+                            $("#td-insulina").html('Disminuya BIC 2 ml/hr');
+                        else if (delta >= 126 && delta <= 150)
+                            $("#td-insulina").html('Disminuya BIC 2.5 ml/hr');
+                        else if (delta >= 151 && delta <= 175)
+                            $("#td-insulina").html('Disminuya BIC 3 ml/hr');
+                        else if (delta > 175)
+                            $("#td-insulina").html('Disminuya BIC 3.5 ml/hr');
+                    }
+                }
+                else {
+
+                }
+
+            }
+        }
+
+        $('#ph').keyup(function () {
+            ph();
+        });
+        $('#k').keyup(function () {
+            kp();
+            insulina();
+        });
+        $('#p').keyup(function () {
+            kp();
+        })  ;
+        $('#na').keyup(function () {
+            na();
+        });
+        $('#hgt1').keyup(function () {
+            na();
+        });
+
+        $('#hgta').keyup(function () {
+            na();
+            insulina()
+        });
+
+        $('#hgtp').keyup(function () {
+            na();
+            insulina()
+        });
+
+    </script>
+</div>
+</body>
+</html>
