@@ -8,7 +8,8 @@
     ],
     "plugins": {
       "cordova-plugin-media": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-firebase": {}
     }
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "cordova-android-support-gradle-release": "^1.1.5",
     "cordova-plugin-compat": "^1.2.0",
     "cordova-plugin-file": "*",
+    "cordova-plugin-firebase": "^1.0.0",
     "cordova-plugin-media": "^3.0.1",
     "cordova-plugin-whitelist": "1",
     "cordova-support-google-services": "^1.1.0"
