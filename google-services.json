@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "434570081290",
+    "firebase_url": "https://medicina-hospitalaria.firebaseio.com",
+    "project_id": "medicina-hospitalaria",
+    "storage_bucket": "medicina-hospitalaria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434570081290:android:3a34ffac39eb1d05",
+        "android_client_info": {
+          "package_name": "lhidalgo42.nicolas.triantafilo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434570081290-ooo8g7srbro87krohdctcu4sopq5k390.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD52Ew1keZux9TWWOZJCBaSmGQE47go8dk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
