@@ -42,3 +42,6 @@ input {
     padding-top: 0;
     padding-bottom: 0;
 }
+label{
+    font-size: 18px;
+}
