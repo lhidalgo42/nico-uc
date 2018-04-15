@@ -103,7 +103,7 @@
                 <br>
                 <span id="resultado4" style="font-size: 18px;"></span>
                 <br><br>
-                <span id="resultado3" style="font-size: 18px">Al rotar opioides reduzca <br> un 30%-50% la dosis</span>
+                <span id="resultado3" style="font-size: 18px">Al rotar opioides se sugiere reducir <br> un 30%-50% la dosis</span>
             </div>
             <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
             <a href="opioides.html" style="width: 12.3%;height: 8%;left: 43.2%;top: 91%;"> </a>
@@ -116,11 +116,21 @@
         let mg = $("#mg").val();
         let val1 = $("#sel1").val();
         let val2 = $("#sel2").val();
-        let unit = $('#sel2').children('option:selected', this).attr('unit');
+        let unit1 =$('#sel1').children('option:selected', this).attr('unit');
+        let unit2 =$('#sel2').children('option:selected', this).attr('unit');
+        let unit;
         let to = $('#sel1').children('option:selected', this).attr('to');
+        let to1 = $('#sel2').children('option:selected', this).attr('to');
         let name = $('#sel2').children('option:selected', this).attr('name');
         let name1 = $('#sel1').children('option:selected', this).attr('name');
         let text = '';
+        if(unit1 === "ug/hr" && unit2 === "mg")
+            unit = "mg al dia";
+        else if(unit1 === "mg" && unit2 === "ug/hr")
+            unit = unit2;
+        else
+            unit = unit2;
+
         if(name1 === 'Morfina EV' && name === 'Metadona EV')
             text = 'No existe conversión directa, solo aproximado.' +
                 'Use con precaución';

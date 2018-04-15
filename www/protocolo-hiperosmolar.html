@@ -191,7 +191,7 @@
 
             let nac = na + 0.024 * (hgt - 100);
             nac = Math.round(nac);
-            if (hgt2 < 200)
+            if (hgt2 < 300)
                 $("#td-na").html('<strong>Disminuir infusión de SS 0,9%/0,45% a 100 ml/hr y agregar SG5% a 100 ml/hr</strong>').css('background-color', 'yellow');
             else if (nac >= 135)
                 $("#td-na").html('(Na Corregido: ' + nac + ') SS 0.45% a 250-500 ml/hr, según hidratación').css('background-color', 'white');
@@ -223,19 +223,19 @@
                         text = 'Suspender Infusion ' +
                             '<br> Dar 24 g de Glucosa (4 amp SG30%) + SG5%' +
                             '<br> HGT c/ 15 min' +
-                            '<br>Cuando HGT >150 Reiniciar BIC Insulina al 50% de último Flujo';
+                            '<br>Cuando HGT >250 Reiniciar BIC Insulina al 50% de último Flujo';
                     }
                     else if (hgta < 70) {
                         text = 'Suspender Infusion ' +
                             '<br> Dar 18 g de Glucosa (3 amp SG30%) + SG5%' +
                             '<br> HGT c/ 15 min' +
-                            '<br>Cuando HGT >150 Reiniciar BIC Insulina al 75% de último Flujo';
+                            '<br>Cuando HGT >250 Reiniciar BIC Insulina al 75% de último Flujo';
                     }
                     else if (hgta < 100) {
                         text = 'Suspender BIC x 30 min ' +
                             '<br> HGT c/ 30 min ' +
                             '<br> Iniciar SG 5% ' +
-                            '<br> Cuando HGT >150 Reiniciar BIC Insulina al 75% de último Flujo';
+                            '<br> Cuando HGT >250 Reiniciar BIC Insulina al 75% de último Flujo';
                     } else {
                         delta = (hgta - hgtp);
                         if (delta > 0) { // aumenta
@@ -247,8 +247,6 @@
                                 text = 'Aumente BIC 2 ml/hr ';
                             else if (delta < 50 && delta >= 1)
                                 text = 'Aumente BIC 1.5 ml/hr ';
-                            else
-                                text = 'CASO Extrano'; //TODO BORRAR
                         }
                         else {
 
@@ -269,7 +267,7 @@
                                 text = 'Disminuya BIC 3.5 ml/hr ';
                         }
                     }
-                    if (hgta < 200)
+                    if (hgta < 300)
                         text += "<br><strong style='background-color: yellow'>Pase a Protocolo 2</strong>";
                 }
                 else {
@@ -284,36 +282,36 @@
                         1: {
                             1: -1,
                             2: -0.8,
-                            3: -0.4
+                            3: -0.6
                         },
                         2: {
                             1: -0.8,
-                            2: -0.4,
-                            3: 0
+                            2: -0.6,
+                            3: -0.4
                         },
                         3: {
-                            1: -0.4,
-                            2: 0,
-                            3: 0.2
+                            1: -0.6,
+                            2: -0.4,
+                            3: -0.2
                         },
                         4: {
-                            1: 0,
-                            2: 0.2,
-                            3: 0.4
+                            1: -0.4,
+                            2: -0.2,
+                            3: 0
                         },
                         5: {
-                            1: 0.2,
-                            2: 0.4,
-                            3: 0.6,
+                            1: -0.2,
+                            2: 0,
+                            3: 0.4,
 
                         },
                         6: {
-                            1: 0.4,
-                            2: 0.6,
+                            1: 0,
+                            2: 0.4,
                             3: 0.8
                         },
                         7: {
-                            1: 0.6,
+                            1: 0.4,
                             2: 0.8,
                             3: 1
                         }
@@ -323,13 +321,13 @@
                             text = 'Suspender Infusion ' +
                                 '<br> Dar 24 g de Glucosa (4 amp SG30%) + SG5%' +
                                 '<br> HGT c/ 15 min' +
-                                '<br>Cuando HGT >120 Reiniciar BIC Insulina al 50% de último Flujo';
+                                '<br>Cuando HGT >200 Reiniciar BIC Insulina al 50% de último Flujo';
                         }
                         else if (hgta < 70) {
                             text = 'Suspender Infusion ' +
                                 '<br> Dar 18 g de Glucosa (3 amp SG30%) + SG5%' +
                                 '<br> HGT c/ 15 min' +
-                                '<br>Cuando HGT >120 Reiniciar BIC Insulina al 75% de último Flujo';
+                                '<br>Cuando HGT >200 Reiniciar BIC Insulina al 75% de último Flujo';
                         }
                         else {
                             if (hgtp >= 70)
@@ -383,7 +381,7 @@
                                     text = "Mantener BIC";
                                 else
                                     text += " ml/hr";
-                                text +="<br><a href='resolucion-cetoacidosis.html' class='link'>Controlar ELP y Gases c/ 2-4 hrs hasta Resolución (ir)</a>";
+                                text +="<br><a href='resolucion-hiperosmolar.html' class='link'>Controlar ELP y Gases c/ 2-4 hrs hasta Resolución (ir)</a>";
                             }
                             else{
                                 text = "Agregar HGT Previo";
