@@ -7,18 +7,31 @@
 
     <!-- Bootstrap -->
     <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/easy-autocomplete.min.css">
     <link href="css/stylesheet.css" rel="stylesheet">
     <script type="application/javascript" src="js/iscroll.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easy-autocomplete.min.js"></script>
     <script src="js/javascript.js"></script>
-
+    <style>
+        .easy-autocomplete, .eac-square{
+            width: 95% !important;
+        }
+    </style>
 </head>
 <body>
 <div class="content" id="content">
     <div class="home" style="display: block">
-        <img src="img/slides/indice%20final.jpg">
+        <img src="img/slides/indice-final.jpg">
+        <a href="#" style="width: 13%;height: 8%;top: 2%;right: 7%" id="show"></a>
+        <div class="form-group" style="position: absolute;top: 3%;width: 95%;left: 5%;display: none">
+            <input type="text" class="form-control" name="search" id="search" placeholder="Buscador">
+
+        </div>
         <!-- primera linea -->
         <a href="hipo-hipertension.html" style="width: 21.2%;height: 12.4%;left: 5.7%;top: 12.6%;"> </a>
         <a href="infusiones.html" style="width: 21.2%;height: 12.4%;left: 41%;top: 12.6%;"> </a>
@@ -48,11 +61,41 @@
         <a href="autores.html" style="width: 51%;height: 5.7%;left: 25%;top: 92%;"> </a>
     </div>
 </div>
+
 <script>
     $(document).ready(function () {
         var last = ["/home.html"];
         window.sessionStorage.setItem('last', JSON.stringify(last));
     });
+    $("#show").click(function (e) {
+        $(this).hide();
+        e.preventDefault();
+        $(".form-group").css('display','block')
+    })
+</script>
+<script>
+    var options = {
+
+        url: "busqueda.json",
+
+        getValue: "text",
+
+        list: {
+            match: {
+                enabled: true
+            },
+            onClickEvent: function () {
+                var last = JSON.parse(window.sessionStorage.getItem('last'));
+                last.push(window.location.pathname);
+                window.sessionStorage.setItem('last', JSON.stringify(last));
+                window.location.href = $("#search").getSelectedItemData().link;
+            },
+        },
+
+        theme: "square"
+    };
+
+    $("#search").easyAutocomplete(options);
 </script>
 </body>
 </html>

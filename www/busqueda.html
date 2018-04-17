@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="user-scalable=yes"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Busqueda</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/easy-autocomplete.min.css">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script type="application/javascript" src="js/iscroll.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easy-autocomplete.min.js"></script>
+    <script src="js/javascript.js"></script>
+</head>
+<body>
+<div class="content" id="content">
+    <div class="home" style="display: block">
+        <img src="img/slides/Base%20calculadora.jpg">
+        <div class="home" style="display: block">
+
+            <div class="form-group col-xs-12" style="position: absolute;top: 10%;">
+                <label for="search">Busqueda</label>
+                <input type="text" class="form-control" name="search" id="search">
+
+            </div>
+
+            <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
+            <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
+        </div>
+    </div>
+</div>
+<script>
+    var options = {
+
+        url: "busqueda.json",
+
+        getValue: "text",
+
+        list: {
+            match: {
+                enabled: true
+            },
+            onClickEvent: function () {
+                window.location.href = $("#search").getSelectedItemData().link;
+            },
+        },
+
+        theme: "square"
+    };
+
+    $("#search").easyAutocomplete(options);
+</script>
+</body>
+</html>

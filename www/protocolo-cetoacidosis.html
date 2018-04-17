@@ -99,7 +99,7 @@
                         <td style="width: 200px">
                             <strong>Fuidos</strong>
                             <br> Na(meq/L) : <input type="number" id="na">
-                            <br>ELP y Gases c/ 3-4 hrs
+                            <br>ELP y Gases c/ 2-4 hrs
                         </td>
                         <td id="td-na"></td>
                     </tr>
@@ -145,7 +145,7 @@
             let ph = parseFloat($("#ph").val());
             if (!isNaN(ph)) {
                 if (ph < 6.9)
-                    $("#td-ph").html('<a href="infusion-bicarbonato.html" class="link">Inicie Bicarbonato EV (ir)</a>')
+                    $("#td-ph").html('<a href="infusion-bicarbonato.html" class="link" onclick="click(this)">Inicie Bicarbonato EV (ir)</a>')
                 else
                     $("#td-ph").html('');
             }
@@ -165,7 +165,7 @@
                 else if (k >= 3.3 && k <= 5.2 && p < 1)
                     $("#td-k-p").html("Aportar 2º SS 0.45% con 5 amp de Monofosfato de P x Litro a 100-150 ml/hr");
                 else if (k > 5.2)
-                    $("#td-k-p").html("No dar Potasio y chequée cada 2 hrs");
+                    $("#td-k-p").html("No dar Potasio y controlar cada 2 hrs");
                 else
                     $("#td-k-p").html('');
             }
