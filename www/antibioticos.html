@@ -12,7 +12,6 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
-    <script src="js/javascript.js"></script>
     <style>
         #light1 {
             position: absolute;
@@ -51,7 +50,7 @@
         <img src="img/slides/Antibioticos.jpg">
         <div class="home" style="display: block">
             <a href="home.html" style="width: 13.3%;height: 7%;left: 18.7%;top: 91%;"> </a>
-            <a id="back" style="width: 13.3%;height: 7.5%;left: 66.2%;top: 91%;"> </a>
+            <a href="calculadora-renal.html" style="width: 13.3%;height: 7.5%;left: 66.2%;top: 91%;"> </a>
         </div>
         <div id="light1" style="display: none"></div>
         <div id="light2" style="display:none;"></div>
@@ -73,6 +72,52 @@
         }
         else if (renal < 10) {
             $("#light3").css('display','block')
+        }
+    });
+    $(document).ready(function () {
+        $("#content").addClass('animated').addClass('fadeIn');
+        $("a").addClass('prevented');
+        $("a").click(function (e) {
+            if ($(this).hasClass('prevented')) {
+                e.preventDefault();
+            }
+        });
+        setTimeout(function () {
+            let last = JSON.parse(window.sessionStorage.getItem('last'));
+            let go = last.pop();
+            window.sessionStorage.setItem('last', JSON.stringify(last));
+            $("a").removeClass("prevented");
+            $("a:not(#back)").click(function (e) {
+                e.preventDefault();
+                var go = $(this).attr('href');
+                $("#content").removeClass('fadeIn').addClass('fadeOut');
+                setTimeout(function () {
+                    window.location.href = go;
+                }, 200);
+            });
+        }, 400);
+
+        $("img").css('height', ($(window).height() - 10)).css('width', $(window).width());
+
+
+    });
+    var myScroll;
+
+    function loaded() {
+        myScroll = new iScroll('content', {
+            zoom: true,
+            zoomMax: 4,
+            onBeforeScrollStart: false
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', loaded, false);
+    $(document).ready(function () {
+        var selects = document.getElementsByTagName('select');
+        for (var i = 0; i < selects.length; i++) {
+            selects[i].addEventListener('touchstart' /*'mousedown'*/, function (e) {
+                e.stopPropagation();
+            }, false);
         }
     });
 </script>

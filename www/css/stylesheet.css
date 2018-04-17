@@ -41,6 +41,10 @@ input {
     padding-left: 1px;
     padding-top: 0;
     padding-bottom: 0;
+    border: 1px solid black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 label{
     font-size: 18px;

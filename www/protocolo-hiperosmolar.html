@@ -146,13 +146,6 @@
             if (!isNaN(ph)) {
                 if (ph < 6.9) {
                     $("#td-ph").html('<a href="infusion-bicarbonato.html" class="link">Inicie Bicarbonato EV (ir)</a>')
-                    $(".link").click(function () {
-                        e.preventDefault();
-                        var last = JSON.parse(window.sessionStorage.getItem('last'));
-                        last.push(window.location.pathname);
-                        window.sessionStorage.setItem('last', JSON.stringify(last));
-                        var go = $(this).attr('href');
-                    });
                 }else
                     $("#td-ph").html('');
             }
