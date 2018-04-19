@@ -1,6 +1,24 @@
+document.addEventListener('DOMContentLoaded', loaded, false);
+let myScroll;
+
+
+function loaded() {
+    myScroll = new iScroll('content', {
+        zoom: true,
+        zoomMax: 4,
+        onBeforeScrollStart: false
+    });
+}
 $(document).ready(function () {
-    var last = JSON.parse(window.sessionStorage.getItem('last'));
-    last.push(window.location.href);
+    let selects = document.getElementsByTagName('select');
+    for (let i = 0; i < selects.length; i++) {
+        selects[i].addEventListener('touchstart' /*'mousedown'*/, function (e) {
+            e.stopPropagation();
+        }, false);
+    }
+
+    let last = JSON.parse(window.sessionStorage.getItem('last'));
+    last.push(window.location.pathname);
     window.sessionStorage.setItem('last', JSON.stringify(last));
 
     $("#content").addClass('animated').addClass('fadeIn');
@@ -26,34 +44,15 @@ $(document).ready(function () {
     $("#back").click(function (e) {
         e.preventDefault();
         let last = JSON.parse(window.sessionStorage.getItem('last'));
-        last.splice(-1,1);
+        last.pop();
+        let go = last.pop();
         window.sessionStorage.setItem('last', JSON.stringify(last));
-        let go = last[last.length-1];
+
         $("#content").removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function () {
             window.location.href = go;
         }, 200);
-
     });
 
 
-});
-var myScroll;
-
-function loaded() {
-    myScroll = new iScroll('content', {
-        zoom: true,
-        zoomMax: 4,
-        onBeforeScrollStart: false
-    });
-}
-
-document.addEventListener('DOMContentLoaded', loaded, false);
-$(document).ready(function () {
-    var selects = document.getElementsByTagName('select');
-    for (var i = 0; i < selects.length; i++) {
-        selects[i].addEventListener('touchstart' /*'mousedown'*/, function (e) {
-            e.stopPropagation();
-        }, false);
-    }
 });

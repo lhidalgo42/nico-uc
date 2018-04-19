@@ -64,7 +64,7 @@
 
 <script>
     $(document).ready(function () {
-        var last = ["/home.html"];
+        var last = [window.location.pathname];
         window.sessionStorage.setItem('last', JSON.stringify(last));
     });
     $("#show").click(function (e) {
