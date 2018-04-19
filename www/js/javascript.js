@@ -27,7 +27,7 @@ $(document).ready(function () {
         e.preventDefault();
         let last = JSON.parse(window.sessionStorage.getItem('last'));
         last.splice(-1,1);
-        last.splice(-1,1);
+        window.sessionStorage.setItem('last', JSON.stringify(last));
         let go = last[last.length-1];
         $("#content").removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function () {
