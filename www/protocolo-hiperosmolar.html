@@ -98,8 +98,8 @@
                     <tr>
                         <td style="width: 200px">
                             <strong>Fuidos</strong>
-                            <br> Na(meq/L) : <input type="number" id="na">
-                            <br>ELP y Gases c/ 2-4 hrs
+                            <br> Na medido(meq/L) : <input type="number" id="na">
+                            <br><span style="font-size: 15px">ELP y Gases c/2-4 hrs</span>
                         </td>
                         <td id="td-na"></td>
                     </tr>
@@ -109,7 +109,7 @@
                         <td id="td-k-p"></td>
                     </tr>
                     <tr>
-                        <td>PH : <input type="number" id="ph"></td>
+                        <td>pH : <input type="number" id="ph"></td>
                         <td id="td-ph"></td>
                     </tr>
                     <tr>
@@ -131,12 +131,13 @@
                                 </label>
                             </div>
                             <br>HGT Previo : <input type="number" id="hgtp">
-                            <br>HGT Actual : <input type="number" id="hgta"></td>
+                            <br style="line-height: 1.85">HGT Actual : <input type="number" id="hgta"></td>
                         <td id="td-insulina"></td>
                     </tr>
                 </table>
             </div>
             <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
+            <a href="protocolo-foto.html" style="width: 18.3%;height: 7%;left: 40.5%;top: 91%;"> </a>
             <a href="#" style="width: 13.3%;height: 8%;left: 66.2%;top: 91%;" id="back"> </a>
         </div>
     </div>
@@ -161,9 +162,9 @@
                 else if (k < 3.3 && p < 1)
                     $("#td-k-p").html("Cargar con 2-3 Amp Monofosfato de P (amp = 11 meq) por hr, hasta k > 3.3");
                 else if (k >= 3.3 && k <= 5.2 && p > 1)
-                    $("#td-k-p").html("Aportar 2º SS 0.45% con 4 amp de KCL x Litro a 100-150 ml/hr");
+                    $("#td-k-p").html("Agregar un 2º SS 0.45% con 4 amp de KCL x Litro a 100-150 ml/hr");
                 else if (k >= 3.3 && k <= 5.2 && p < 1)
-                    $("#td-k-p").html("Aportar 2º SS 0.45% con 5 amp de Monofosfato de P x Litro a 100-150 ml/hr");
+                    $("#td-k-p").html("Agregar un 2º SS 0.45% con 5 amp de Monofosfato de P x Litro a 100-150 ml/hr");
                 else if (k > 5.2)
                     $("#td-k-p").html("No dar Potasio y controlar cada 2 hrs");
                 else
@@ -227,10 +228,10 @@
                             '<br>Cuando HGT >250 Reiniciar BIC Insulina al 75% de último Flujo';
                     }
                     else if (hgta < 100) {
-                        text = 'Suspender BIC x 30 min ' +
-                            '<br> HGT c/ 30 min ' +
-                            '<br> Iniciar SG 5% ' +
-                            '<br> Cuando HGT >250 Reiniciar BIC Insulina al 75% de último Flujo';
+                        text = 'Suspender BIC x 30 min. ' +
+                            '<br> Iniciar SG 5%. ' +
+                            '<br> HGT c/ 30 min. ' +
+                            '<br> Cuando HGT >250 Reiniciar BIC Insulina al 75% de último Flujo.';
                     } else {
                         delta = (hgta - hgtp);
                         if (delta > 0) { // aumenta

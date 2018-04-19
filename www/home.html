@@ -85,9 +85,6 @@
                 enabled: true
             },
             onClickEvent: function () {
-                var last = JSON.parse(window.sessionStorage.getItem('last'));
-                last.push(window.location.pathname);
-                window.sessionStorage.setItem('last', JSON.stringify(last));
                 window.location.href = $("#search").getSelectedItemData().link;
             },
         },

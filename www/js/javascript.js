@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    var last = JSON.parse(window.sessionStorage.getItem('last'));
+    last.push(window.location.href);
+    window.sessionStorage.setItem('last', JSON.stringify(last));
+
     $("#content").addClass('animated').addClass('fadeIn');
     $("a").addClass('prevented');
     $("a").click(function (e) {
@@ -7,9 +11,6 @@ $(document).ready(function () {
         }
     });
     setTimeout(function () {
-        var last = JSON.parse(window.sessionStorage.getItem('last'));
-        last.push(window.location.pathname);
-        window.sessionStorage.setItem('last', JSON.stringify(last));
         $("a").removeClass("prevented");
         $("a:not(#back)").click(function (e) {
             e.preventDefault();
@@ -25,9 +26,9 @@ $(document).ready(function () {
     $("#back").click(function (e) {
         e.preventDefault();
         let last = JSON.parse(window.sessionStorage.getItem('last'));
-        let go = last.pop();
-        go = last.pop();
-        window.sessionStorage.setItem('last', JSON.stringify(last));
+        last.pop();
+        last.pop();
+        let go = last[last.length-1];
         $("#content").removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function () {
             window.location.href = go;
