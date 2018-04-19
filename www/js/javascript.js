@@ -26,8 +26,8 @@ $(document).ready(function () {
     $("#back").click(function (e) {
         e.preventDefault();
         let last = JSON.parse(window.sessionStorage.getItem('last'));
-        last.pop();
-        last.pop();
+        last.splice(-1,1);
+        last.splice(-1,1);
         let go = last[last.length-1];
         $("#content").removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function () {
