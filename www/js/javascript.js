@@ -45,12 +45,12 @@ $(document).ready(function () {
         e.preventDefault();
         let last = JSON.parse(window.sessionStorage.getItem('last'));
         last.pop();
-        let go = last.pop();
+        //let go = last.pop();
         window.sessionStorage.setItem('last', JSON.stringify(last));
 
         $("#content").removeClass('fadeIn').addClass('fadeOut');
         setTimeout(function () {
-            window.location.href = go;
+            window.history.back()
         }, 200);
     });
 
