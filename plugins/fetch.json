@@ -15,14 +15,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-media": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-media@~2.2.0"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-android-support-gradle-release": {
     "source": {
       "type": "registry",

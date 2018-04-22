@@ -7,16 +7,12 @@
       "android"
     ],
     "plugins": {
-      "cordova-plugin-media": {},
       "cordova-plugin-whitelist": {}
     }
   },
   "dependencies": {
     "cordova-android": "^7.0.0",
     "cordova-android-support-gradle-release": "^1.1.5",
-    "cordova-plugin-compat": "^1.2.0",
-    "cordova-plugin-file": "*",
-    "cordova-plugin-media": "^3.0.1",
     "cordova-plugin-whitelist": "1",
     "cordova-support-google-services": "^1.1.0"
   }
