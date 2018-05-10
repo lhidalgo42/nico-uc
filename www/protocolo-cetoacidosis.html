@@ -120,6 +120,8 @@
                             <br>
                             <u>Con BIC Iniciada</u>
                             <br>
+                            (100 U/ 100 ml)
+                            <br>
                             <div class="btn-group" data-toggle="buttons" style="margin-left: -20px;">
                                 <label class="btn btn-default active">
                                     <input type="radio" name="protocolo" id="option2" autocomplete="off" value="1"
@@ -372,7 +374,8 @@
                                     palabra = "M";
                                 else
                                     palabra = "Aumentar BIC";
-
+                                if(rango === 0)
+                                    rango = 1;
                                 k = Math.abs(constantes[rangoa][uso]) * Math.abs(rango);
                                 k = Math.round(k * 10) / 10;
                                 text = palabra + " " + k;
