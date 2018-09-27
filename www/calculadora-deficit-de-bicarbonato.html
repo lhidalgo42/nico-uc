@@ -105,9 +105,9 @@
         let bicarbonato = (isNaN(parseFloat($("#bicarbonato").val()))) ? 1 : parseFloat($("#bicarbonato").val());
         let objetivo = (isNaN(parseFloat($("#objetivo").val()))) ? 1 : parseFloat($("#objetivo").val());
 
-        let res1 = peso * (0.4 + 2.6 / bicarbonato) * (15 - bicarbonato);
-        res1 = Math.round(objetivo - bicarbonato*res1);
-        $("#resultado1").html("HCO3 Requerido: <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + res1 + "</span> meq");
+        let espacio = peso * (0.4 + 2.6 / bicarbonato) ;
+        espacio = Math.round(objetivo - bicarbonato*espacio);
+        $("#resultado1").html("HCO3 Requerido: <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + espacio + "</span> meq");
     }
     $("#peso").keyup(function () {
         cal1();
