@@ -89,8 +89,8 @@
                 <span id="resultado1" style="font-size: 26px;"></span>
             </div>
             <div style="width: 100%;position: absolute;text-align: center;top: 70%">
-                <span style="font-size: 26px;">HCO3- requerido = HCO3 objetivo - HCO3 paciente x espacio de HCO3</span>
-                <span style="font-size: 26px;">Espacio de HCO3 = (0,4 + 2,6/HCO3 paciente) x peso</span>
+                <p style="font-size: 26px;">HCO3- requerido = HCO3 objetivo - HCO3 paciente x espacio de HCO3</p>
+                <p style="font-size: 26px;">Espacio de HCO3 = (0,4 + 2,6/HCO3 paciente) x peso</p>
 
             </div>
 
@@ -106,7 +106,7 @@
         let objetivo = (isNaN(parseFloat($("#objetivo").val()))) ? 1 : parseFloat($("#objetivo").val());
 
         let espacio = peso * (0.4 + 2.6 / bicarbonato) ;
-        espacio = Math.round(objetivo - bicarbonato*espacio);
+        espacio = Math.abs(Math.round(objetivo - bicarbonato*espacio));
         $("#resultado1").html("HCO3 Requerido: <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + espacio + "</span> meq");
     }
     $("#peso").keyup(function () {
