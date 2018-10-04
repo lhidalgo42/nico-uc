@@ -81,8 +81,18 @@
             <label for="bicarbonato" style="top: 29%;">(meq/lt)</label>
             <input min="1" max="130" step="1" type="number" name="bicarbonato" id="bicarbonato"
                    style="top: 26%;width: 25%;height: 30px;font-size:22px;">
-            <div style="width: 100%;position: absolute;text-align: center;top: 50%;">
+            <label for="objetivo" style="top: 35%;">HCO<small>3</small> Objetivo</label>
+            <label for="objetivo" style="top: 39%;">(meq/lt)</label>
+            <input min="1" max="130" step="1" type="number" name="objetivo" id="objetivo"
+                   style="top: 36%;width: 25%;height: 30px;font-size:22px;">
+            <div style="width: 100%;position: absolute;text-align: center;top: 60%;">
                 <span id="resultado1" style="font-size: 26px;"></span>
+            </div>
+            <div style="width: 100%;position: absolute;text-align: center;top: 70%">
+                <p style="font-size: 16px;">HCO3 requerido = (HCO3 objetivo - HCO3 paciente) x espacio de HCO3</p>
+                <p style="font-size: 16px;">Espacio de HCO3 = (0,4 + 2,6/HCO3 paciente) x peso</p>
+                <p style="font-size: 13px"><i>Nat. Rev. Nephrol. 6, 274–285 (2010)</i></p>
+
             </div>
 
             <a href="home.html" style="width: 13.3%;height: 8%;left: 18.7%;top: 91%;"> </a>
@@ -94,17 +104,19 @@
     function cal1() {
         let peso = (isNaN(parseFloat($("#peso").val()))) ? 0 : parseFloat($("#peso").val());
         let bicarbonato = (isNaN(parseFloat($("#bicarbonato").val()))) ? 1 : parseFloat($("#bicarbonato").val());
+        let objetivo = (isNaN(parseFloat($("#objetivo").val()))) ? 1 : parseFloat($("#objetivo").val());
 
-        let res1 = peso * (0.4 + 2.6 / bicarbonato) * (15 - bicarbonato);
-        res1 = Math.round(res1);
-        $("#resultado1").html("Déficit de HCO3: <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + res1 + "</span> meq/lt");
+        let espacio = peso * (0.4 + 2.6 / bicarbonato) ;
+        espacio = Math.abs(Math.round((objetivo - bicarbonato)*espacio));
+        $("#resultado1").html("HCO3 Requerido: <span style='color: lightseagreen;font-weight: bold;font-size: 30px'>" + espacio + "</span> meq");
     }
-
-
     $("#peso").keyup(function () {
         cal1();
     });
     $("#bicarbonato").keyup(function () {
+        cal1();
+    });
+    $("#objetivo").keyup(function () {
         cal1();
     });
     cal1();
